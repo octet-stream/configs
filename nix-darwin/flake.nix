@@ -15,6 +15,7 @@
       environment.systemPackages = [
         pkgs.vim
         pkgs.fnm
+        pkgs.direnv
       ];
 
       # Auto upgrade nix package and the daemon service.
