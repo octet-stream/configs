@@ -14,6 +14,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = [
         pkgs.vim
+        pkgs.fnm
       ];
 
       # Auto upgrade nix package and the daemon service.
@@ -42,22 +43,9 @@
           autoUpdate = true;
           upgrade = true;
         };
-        # brews = [
-        #   "imagemagic",
-        #   "bat",
-        #   "siege",
-        #   "deno",
-        #   "youtube-dl",
-        #   "rustup",
-        #   "pulumi",
-        #   "htop",
-        #   "fnm",
-        #   "devcontainer",
-        #   "libsql/sqld/sqld",
-        #   "teamookla/speedtest/speedtest",
-        #   "oven-sh/bun/bun",
-        #   "git-extras"
-        # ];
+        brews = [
+          "git-extras"
+        ];
       };
     };
   in
