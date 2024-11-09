@@ -49,6 +49,34 @@
         brews = [
           "git-extras"
         ];
+        casks = [
+          # Browsers
+          "firefox"
+          "google-chrome"
+          "tor-browser"
+
+          "orbstack" # Docker Desktop alternative
+          "linear-linear" # Projects management tool
+          "lulu" # Firewall
+          "topnotch" # Simply hides the notch ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯
+          "jordanbaird-ice" # Menu bar manager
+          "visual-studio-code" # Code editor
+          "appcleaner" # Uninstallation utility
+          "discord" # Messenger
+          "hot" # Temperature Sensors
+          "inkscape" # SVG editor
+          "openemu" # Retro consoles emulator
+          "qbittorrent" # BitTorrent client
+          "whisky" # Wine wrapper built with SwiftUI
+
+          # Video players
+          "vlc"
+          "iina"
+
+          # DB Clients
+          "db-browser-for-sqlite" # SQLite
+          "sequel-ace" # MySQL and MariaDB
+        ];
       };
     };
   in
