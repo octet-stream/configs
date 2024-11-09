@@ -37,6 +37,9 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
+      # Enable Touch ID auth authentication for sudo
+      security.pam.enableSudoTouchIdAuth = true;
+
       homebrew = {
         enable = true;
         onActivation = {
