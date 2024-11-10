@@ -46,9 +46,11 @@
         onActivation = {
           autoUpdate = true;
           upgrade = true;
+          cleanup = "zap";
         };
         brews = [
           "git-extras"
+          "mas" # Will be installed automatically if masApps has any App, but I'll have it installed ahead just in case if I remove the apps and still need this program
         ];
         casks = [
           # Browsers
@@ -56,19 +58,17 @@
           "google-chrome"
           "tor-browser"
 
+          # Code editors
+          "visual-studio-code"
+          "zed"
+
+          # Dev tools
           "orbstack" # Docker Desktop alternative
           "linear-linear" # Projects management tool
-          "lulu" # Firewall
-          "topnotch" # Simply hides the notch ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯
-          "jordanbaird-ice" # Menu bar manager
-          "visual-studio-code" # Code editor
-          "appcleaner" # Uninstallation utility
-          "discord" # Messenger
-          "hot" # Temperature Sensors
-          "inkscape" # SVG editor
-          "openemu" # Retro consoles emulator
-          "qbittorrent" # BitTorrent client
+
+          # Gaming
           "whisky" # Wine wrapper built with SwiftUI
+          "openemu" # Retro consoles emulator
 
           # Video players
           "vlc"
@@ -77,7 +77,28 @@
           # DB Clients
           "db-browser-for-sqlite" # SQLite
           "sequel-ace" # MySQL and MariaDB
+
+          # Others
+          "lulu" # Firewall
+          "topnotch" # Simply hides the notch ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯
+          "jordanbaird-ice" # Menu bar manager
+          "appcleaner" # Uninstallation utility
+          "discord" # Messenger
+          "hot" # Temperature Sensors
+          "inkscape" # SVG editor
+          "qbittorrent" # BitTorrent client
         ];
+
+        masApps = {
+          Telegram = 747648890;
+          Outline = 1356178125;
+          Xcode = 497799835;
+          Gifski = 1351639930;
+          Lungo = 1263070803;
+          Spark = 1176895641;
+          "HEIC Converter" = 1294126402;
+          "Color Picker" = 1545870783;
+        };
       };
     };
   in
