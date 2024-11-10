@@ -16,6 +16,9 @@
         pkgs.vim
         pkgs.fnm
         pkgs.direnv
+        pkgs.bun
+        pkgs.deno
+        pkgs.rustup
       ];
 
       # Auto upgrade nix package and the daemon service.
