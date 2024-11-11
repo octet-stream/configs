@@ -7,9 +7,11 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{self, nix-darwin, nixpkgs}:
   let
-    configuration = { pkgs, ... }: {
+    configuration = {pkgs, ...}: {
+      nixpkgs.config.allowUnfree = true;
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = [
@@ -19,6 +21,7 @@
         pkgs.bun
         pkgs.deno
         pkgs.rustup
+        pkgs.ookla-speedtest
       ];
 
       # Auto upgrade nix package and the daemon service.
@@ -109,7 +112,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#macbook-pro
     darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [configuration];
     };
 
     # Expose the package set, including overlays, for convenience.
