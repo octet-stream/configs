@@ -22,26 +22,13 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
-        mkalias
         vim
-        fnm
+        fnm # Node.js version manager written in Rust
         direnv
         bun
         deno
         rustup
         ookla-speedtest
-
-        # VSCode and extensions
-        (vscode-with-extensions.override {
-          vscodeExtensions = with vscode-extensions; [
-            jnoortheen.nix-ide
-            ms-vscode-remote.remote-containers
-            biomejs.biome
-            astro-build.astro-vscode
-            editorconfig.editorconfig
-            sdras.night-owl
-          ];
-        })
       ];
 
       users.users.octetstream.home = "/Users/octetstream";
@@ -54,6 +41,9 @@
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
+      nix.configureBuildUsers = true;
+      nix.useDaemon = true;
+
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 
@@ -65,29 +55,34 @@
       system.stateVersion = 5;
 
       system.defaults = {
-        dock.mru-spaces = true;
         screencapture.location = "~/Pictures/Screencaps";
-      };
+        loginwindow.GuestEnabled = false;
+        dock = {
+          mru-spaces = true;
 
-      # Activation script for macOS aliases
-      system.activationScripts.applications.text = let
-        env = pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
+          # List of the apps pinned in the Dock
+          persistent-apps = [
+            "/Applications/Firefox.app"
+            "/Applications/Google Chrome.app"
+            "/Applications/Spark.app"
+            "/Applications/Telegram.app"
+
+            # Figure out how to get this path dynamically, if there's a way
+            "/Users/octetstream/Applications/Home Manager Apps/Visual Studio Code.app"
+
+            "/Applications/Discord.app"
+            "/System/Applications/Music.app"
+            "/System/Applications/Photos.app"
+            "/System/Applications/Calendar.app"
+            "/System/Applications/TV.app"
+            "/System/Applications/System Settings.app"
+          ];
         };
-      in
-      pkgs.lib.mkForce ''
-        echo "setting up /Applications..." >&2
-        rm -rf /Applications/Nix\ Apps
-        mkdir -p /Applications/Nix\ Apps
-        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read -r src; do
-          app_name=$(basename "$src")
-          echo "copying $src" >&2
-          ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-        done
-      '';
+        NSGlobalDomain = {
+          AppleICUForce24HourTime = true;
+          AppleInterfaceStyle = "Dark";
+        };
+      };
 
       # Enable Touch ID auth authentication for sudo
       security.pam.enableSudoTouchIdAuth = true;

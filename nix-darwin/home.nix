@@ -1,12 +1,6 @@
 {config, pkgs, ...}:
 
 {
-  # home.username = "octetstream";
-  # home.homeDirectory = "/Users/octetstream";
-  # home.stateVersion = "23.05";
-
-  # home.packages = [];
-
   home = {
     username = "octetstream";
     homeDirectory = "/Users/octetstream";
@@ -25,5 +19,20 @@
 
   programs = {
     home-manager.enable = true;
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        ms-vscode-remote.remote-containers
+        biomejs.biome
+        astro-build.astro-vscode
+        editorconfig.editorconfig
+        sdras.night-owl
+        # Find a way to install this extension:
+        # ms-vscode.sublime-keybindings
+        vue.volar
+        graphql.vscode-graphql
+      ];
+    };
   };
 }
