@@ -5,9 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{self, nix-darwin, nixpkgs}:
+  outputs = inputs@{self, nix-darwin, nixpkgs, home-manager}:
   let
     configuration = {pkgs, config, ...}: {
       nixpkgs.config.allowUnfree = true;
@@ -39,6 +43,9 @@
           ];
         })
       ];
+
+      users.users.octetstream.home = "/Users/octetstream";
+      home-manager.backupFileExtension = "backup";
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
@@ -150,7 +157,15 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#macbook-pro
     darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
-      modules = [configuration];
+      modules = [
+        configuration
+
+        home-manager.darwinModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.octetstream = import ./home.nix;
+        }
+      ];
     };
 
     # Expose the package set, including overlays, for convenience.
