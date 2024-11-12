@@ -44,6 +44,11 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
+      system.defaults = {
+        dock.mru-spaces = true;
+        screencapture.location = "~/Pictures/Screencaps";
+      };
+
       # Enable Touch ID auth authentication for sudo
       security.pam.enableSudoTouchIdAuth = true;
 
