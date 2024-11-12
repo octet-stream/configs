@@ -17,14 +17,14 @@
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages = [
-        pkgs.vim
-        pkgs.fnm
-        pkgs.direnv
-        pkgs.bun
-        pkgs.deno
-        pkgs.rustup
-        pkgs.ookla-speedtest
+      environment.systemPackages = with pkgs; [
+        vim
+        fnm
+        direnv
+        bun
+        deno
+        rustup
+        ookla-speedtest
       ];
 
       # Auto upgrade nix package and the daemon service.
