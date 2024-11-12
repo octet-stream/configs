@@ -9,7 +9,7 @@
 
   outputs = inputs@{self, nix-darwin, nixpkgs}:
   let
-    configuration = {pkgs, ...}: {
+    configuration = {pkgs, config, ...}: {
       nixpkgs.config.allowUnfree = true;
 
       # The platform the configuration will be used on.
@@ -18,6 +18,7 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
+        mkalias
         vim
         fnm
         direnv
@@ -25,6 +26,18 @@
         deno
         rustup
         ookla-speedtest
+
+        # VSCode and extensions
+        (vscode-with-extensions.override {
+          vscodeExtensions = with vscode-extensions; [
+            jnoortheen.nix-ide
+            ms-vscode-remote.remote-containers
+            biomejs.biome
+            astro-build.astro-vscode
+            editorconfig.editorconfig
+            sdras.night-owl
+          ];
+        })
       ];
 
       # Auto upgrade nix package and the daemon service.
@@ -49,6 +62,26 @@
         screencapture.location = "~/Pictures/Screencaps";
       };
 
+      # Activation script for macOS aliases
+      system.activationScripts.applications.text = let
+        env = pkgs.buildEnv {
+          name = "system-applications";
+          paths = config.environment.systemPackages;
+          pathsToLink = "/Applications";
+        };
+      in
+      pkgs.lib.mkForce ''
+        echo "setting up /Applications..." >&2
+        rm -rf /Applications/Nix\ Apps
+        mkdir -p /Applications/Nix\ Apps
+        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+        while read -r src; do
+          app_name=$(basename "$src")
+          echo "copying $src" >&2
+          ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+        done
+      '';
+
       # Enable Touch ID auth authentication for sudo
       security.pam.enableSudoTouchIdAuth = true;
 
@@ -70,7 +103,7 @@
           "tor-browser"
 
           # Code editors
-          "visual-studio-code"
+          # "visual-studio-code"
           "zed"
 
           # Dev tools
