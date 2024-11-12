@@ -1,0 +1,8 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "workbench.colorTheme": "Night Owl (No Italics)",
+    "breadcrumbs.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "window.commandCenter": false
+}

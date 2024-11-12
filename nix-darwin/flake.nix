@@ -66,11 +66,11 @@
             "/Applications/Google Chrome.app"
             "/Applications/Spark.app"
             "/Applications/Telegram.app"
+            "/Applications/Discord.app"
 
             # Figure out how to get this path dynamically, if there's a way
             "/Users/octetstream/Applications/Home Manager Apps/Visual Studio Code.app"
 
-            "/Applications/Discord.app"
             "/System/Applications/Music.app"
             "/System/Applications/Photos.app"
             "/System/Applications/Calendar.app"
