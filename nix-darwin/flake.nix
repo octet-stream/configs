@@ -11,9 +11,9 @@
     };
   };
 
-  outputs = inputs@{self, nix-darwin, nixpkgs, home-manager}:
+  outputs = inputs@{self, nix-darwin, home-manager, ...}:
   let
-    configuration = {pkgs, config, ...}: {
+    configuration = {pkgs, ...}: {
       nixpkgs.config.allowUnfree = true;
 
       # The platform the configuration will be used on.
@@ -22,6 +22,7 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
+        nixd
         vim
         fnm # Node.js version manager written in Rust
         direnv
