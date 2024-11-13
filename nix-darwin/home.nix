@@ -17,7 +17,7 @@ in
   home = {
     username = "octetstream";
     homeDirectory = "/Users/octetstream";
-    stateVersion = "23.05";
+    stateVersion = "24.05";
 
     # User-specific packages not available system-wide
     packages = [];
