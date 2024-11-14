@@ -8,5 +8,6 @@
   "window.commandCenter": false,
   "editor.tabSize": 2,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "editor.stickyScroll.enabled": false
+  "editor.stickyScroll.enabled": false,
+  "workbench.startupEditor": "none"
 }
