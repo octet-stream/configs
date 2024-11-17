@@ -158,6 +158,8 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#macbook-pro
+    # Or build & switch using:
+    # $ darwin-rebuild switch --flake .#macbook-pro
     darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
