@@ -18,5 +18,8 @@
         "command": ["nixfmt"]
       }
     }
+  },
+  "files.associations": {
+    "flake.lock": "json"
   }
 }
