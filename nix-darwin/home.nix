@@ -1,17 +1,22 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 let
-  sysDir = if pkgs.stdenv.hostPlatform.isDarwin then
-    "${config.home.homeDirectory}/Library/Application Support"
-  else
-    "${config.xdg.configHome}";
+  sysDir =
+    if pkgs.stdenv.hostPlatform.isDarwin then
+      "${config.home.homeDirectory}/Library/Application Support"
+    else
+      "${config.xdg.configHome}";
 
-  vscodeConfigDirName = with config.programs.vscode.package; {
-    "vscode" = "Code";
-    "vscode-insiders" = "Code - Insiders";
-    "vscodium" = "VSCodium";
-  }.${pname};
+  vscodeConfigDirName =
+    with config.programs.vscode.package;
+    {
+      "vscode" = "Code";
+      "vscode-insiders" = "Code - Insiders";
+      "vscodium" = "VSCodium";
+    }
+    .${pname};
 
   vscodeConfigPath = "${sysDir}/${vscodeConfigDirName}/User/settings.json";
+
 in
 {
   home = {
@@ -20,9 +25,9 @@ in
     stateVersion = "24.05";
 
     # User-specific packages not available system-wide
-    packages = [];
+    packages = [ ];
 
-    sessionVariables = {};
+    sessionVariables = { };
 
     sessionPath = [
       "/run/current-system/sw/bin"

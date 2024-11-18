@@ -9,5 +9,14 @@
   "editor.tabSize": 2,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.stickyScroll.enabled": false,
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "nix.serverPath": "nixd",
+  "nix.enableLanguageServer": true,
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
+  }
 }
