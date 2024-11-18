@@ -49,6 +49,7 @@ in
         ms-vscode.sublime-keybindings
         vue.volar
         graphql.vscode-graphql
+        ms-azuretools.vscode-docker
       ];
     };
   };
