@@ -21,5 +21,8 @@
   },
   "files.associations": {
     "flake.lock": "json"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "off",
   }
 }
