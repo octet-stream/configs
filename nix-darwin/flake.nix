@@ -46,6 +46,8 @@
             deno
             rustup
             ookla-speedtest
+            htop
+            postgresql
           ];
 
           users.users.octetstream.home = "/Users/octetstream";
@@ -115,6 +117,7 @@
               "git-extras"
               "mas" # Will be installed automatically if masApps has any App, but I'll have it installed ahead just in case if I remove the apps and still need this program
               "pulumi" # TODO: Use pulumi from nixpkgs registry.
+              "mysql"
             ];
             casks = [
               # Browsers
