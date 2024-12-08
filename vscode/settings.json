@@ -2,7 +2,6 @@
   "$schema": "vscode://schemas/settings/user",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
-  "workbench.colorTheme": "Night Owl (No Italics)",
   "breadcrumbs.enabled": false,
   "editor.cursorBlinking": "solid",
   "window.commandCenter": false,
@@ -24,5 +23,7 @@
   },
   "[markdown]": {
     "editor.wordWrap": "off",
-  }
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Night Owl (No Italics)"
 }

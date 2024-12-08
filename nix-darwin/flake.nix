@@ -2,7 +2,7 @@
   description = "My Nix Darwin flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -88,7 +88,7 @@
                 "/Applications/Discord.app"
 
                 # Figure out how to get this path dynamically, if there's a way
-                "/Users/octetstream/Applications/Home Manager Apps/Visual Studio Code.app"
+                "/Applications/Visual Studio Code.app"
 
                 "/System/Applications/Music.app"
                 "/System/Applications/Photos.app"
@@ -126,7 +126,7 @@
               "tor-browser"
 
               # Code editors
-              # "visual-studio-code"
+              "visual-studio-code"
               "zed"
 
               # Dev tools

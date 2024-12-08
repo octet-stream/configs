@@ -36,26 +36,27 @@ in
 
     file = {
       # Note: To make a writable link to the original file use config.lib.file.mkOutOfStoreSymlink function and point to a _full_ path using a string instead of a _path_ type
-      ${vscodeConfigPath}.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/projects/dotfiles/vscode/settings.json";
+      ${vscodeConfigPath}.source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/projects/dotfiles/vscode/settings.json";
     };
   };
 
   programs = {
     home-manager.enable = true;
-    vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-marketplace; [
-        jnoortheen.nix-ide
-        ms-vscode-remote.remote-containers
-        biomejs.biome
-        astro-build.astro-vscode
-        editorconfig.editorconfig
-        sdras.night-owl
-        ms-vscode.sublime-keybindings
-        vue.volar
-        graphql.vscode-graphql
-        ms-azuretools.vscode-docker
-      ];
-    };
+    # vscode = {
+    #   enable = true;
+    #   extensions = with pkgs.vscode-marketplace; [
+    #     sdras.night-owl
+    #     jnoortheen.nix-ide
+    #     ms-vscode-remote.remote-containers
+    #     biomejs.biome
+    #     astro-build.astro-vscode
+    #     editorconfig.editorconfig
+    #     ms-vscode.sublime-keybindings
+    #     vue.volar
+    #     graphql.vscode-graphql
+    #     ms-azuretools.vscode-docker
+    #   ];
+    # };
   };
 }
