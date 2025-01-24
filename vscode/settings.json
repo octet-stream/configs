@@ -25,5 +25,6 @@
     "editor.wordWrap": "off",
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Night Owl (No Italics)"
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "emmet.triggerExpansionOnTab": true
 }
