@@ -35,7 +35,6 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               git
-              node2nix
               nodejs
               nodePackages.pnpm
             ];
