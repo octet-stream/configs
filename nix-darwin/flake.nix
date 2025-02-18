@@ -54,14 +54,10 @@
           home-manager.backupFileExtension = "backup";
 
           # Auto upgrade nix package and the daemon service.
-          services.nix-daemon.enable = true;
           nix.package = pkgs.nix;
 
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
-
-          nix.configureBuildUsers = true;
-          nix.useDaemon = true;
 
           # Enable alternative shell support in nix-darwin.
           # programs.fish.enable = true;
@@ -115,8 +111,7 @@
             };
             brews = [
               "git-extras"
-              "mas" # Will be installed automatically if masApps has any App, but I'll have it installed ahead just in case if I remove the apps and still need this program
-              "pulumi" # TODO: Use pulumi from nixpkgs registry.
+              "pulumi"
               "mysql"
             ];
             casks = [
