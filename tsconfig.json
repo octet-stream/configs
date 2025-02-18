@@ -1,0 +1,11 @@
+{
+  "include": ["**/*.ts"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "node16",
+    "moduleResolution": "nodenext",
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": true,
+    "noEmit": true
+  }
+}
