@@ -90,6 +90,7 @@
                 "/System/Applications/Photos.app"
                 "/System/Applications/Calendar.app"
                 "/System/Applications/TV.app"
+                "/Applications/iTerm.app"
                 "/System/Applications/System Settings.app"
               ];
             };
@@ -119,6 +120,10 @@
               "firefox"
               "google-chrome"
               "tor-browser"
+
+              # Terminal emulators
+              "iterm2"
+              "ghostty"
 
               # Code editors
               "visual-studio-code"
