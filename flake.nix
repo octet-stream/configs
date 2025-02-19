@@ -37,6 +37,8 @@
               git
               nodejs
               nodePackages.pnpm
+              nixd # LSP for Nix
+              nixfmt-rfc-style
             ];
           };
         }
