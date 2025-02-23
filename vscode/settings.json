@@ -22,10 +22,12 @@
     "flake.lock": "json"
   },
   "[markdown]": {
-    "editor.wordWrap": "off",
+    "editor.wordWrap": "off"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Night Owl (No Italics)",
   "emmet.triggerExpansionOnTab": true,
-  "[typescript]": {}
+  "emmet.includeLanguages": {
+    "astro": "html"
+  }
 }
