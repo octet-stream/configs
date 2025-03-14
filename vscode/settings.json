@@ -29,5 +29,6 @@
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "astro": "html"
-  }
+  },
+  "chat.commandCenter.enabled": false
 }
