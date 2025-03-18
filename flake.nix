@@ -35,7 +35,8 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               git
-              nodejs
+              nodejs_23
+              corepack_23
               nodePackages.pnpm
               nixd # LSP for Nix
               nixfmt-rfc-style
