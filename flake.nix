@@ -1,5 +1,5 @@
 {
-  description = "Development environment to easy get started with my website via Nix and direnv";
+  description = "Development environment for dotfiles";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
