@@ -1,48 +1,34 @@
 {
-  description = "A Nix-flake-based Node.js development environment";
+  description = "Development environment to easy get started with my website via Nix and direnv";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    utils.url = "github:numtide/flake-utils";
+  };
 
   outputs =
-    { self, nixpkgs }:
-    let
-      supportedSystems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-      forEachSupportedSystem =
-        f:
-        nixpkgs.lib.genAttrs supportedSystems (
-          system:
-          f {
-            pkgs = import nixpkgs {
-              inherit system;
-              overlays = [ self.overlays.default ];
-            };
-          }
-        );
-    in
     {
-      overlays.default = final: prev: {
-        nodejs = prev.nodejs;
-      };
-
-      devShells = forEachSupportedSystem (
-        { pkgs }:
-        {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
+      nixpkgs,
+      utils,
+      ...
+    }:
+    utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShell =
+          with pkgs;
+          mkShell {
+            nativeBuildInputs = [
               git
+              nixd
+              nixfmt-rfc-style
               nodejs_23
               corepack_23
-              nodePackages.pnpm
-              nixd # LSP for Nix
-              nixfmt-rfc-style
             ];
           };
-        }
-      );
-    };
+      }
+    );
 }
