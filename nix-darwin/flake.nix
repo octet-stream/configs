@@ -2,17 +2,13 @@
   description = "My Nix Darwin flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -22,7 +18,6 @@
       self,
       nix-darwin,
       home-manager,
-      nix-vscode-extensions,
       ...
     }:
     let
@@ -101,7 +96,9 @@
           };
 
           # Enable Touch ID auth authentication for sudo
-          security.pam.services.sudo_local.touchIdAuth = true;
+          # ! This is deprecated option. Replace it with the next line when 25.x branch is released
+          security.pam.enableSudoTouchIdAuth = true;
+          # security.pam.services.sudo_local.touchIdAuth = true;
 
           homebrew = {
             enable = true;
@@ -184,8 +181,6 @@
             home-manager.useUserPackages = true;
             home-manager.users.octetstream = import ./home.nix;
           }
-
-          { nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ]; }
         ];
       };
 
