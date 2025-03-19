@@ -43,20 +43,40 @@ in
 
   programs = {
     home-manager.enable = true;
-    # vscode = {
-    #   enable = true;
-    #   extensions = with pkgs.vscode-marketplace; [
-    #     sdras.night-owl
-    #     jnoortheen.nix-ide
-    #     ms-vscode-remote.remote-containers
-    #     biomejs.biome
-    #     astro-build.astro-vscode
-    #     editorconfig.editorconfig
-    #     ms-vscode.sublime-keybindings
-    #     vue.volar
-    #     graphql.vscode-graphql
-    #     ms-azuretools.vscode-docker
-    #   ];
-    # };
+    zsh = {
+      enable = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      oh-my-zsh = {
+        enable = true;
+        theme = "robbyrussell";
+        plugins = [
+          "git"
+          "fnm"
+        ];
+      };
+      initExtra = ''
+        # Preferred editor for local and remote sessions
+        if [[ -n $SSH_CONNECTION ]]; then
+          export EDITOR="vim"
+        else
+          export EDITOR="code -wr"
+        fi
+
+        # Enable fnm hook
+        eval "$(fnm env --use-on-cd)"
+      '';
+      shellAliases = {
+        projects = "cd ~/projects";
+        work = "cd ~/work";
+        gpom = "git push origin main";
+        mac-rebuild = "darwin-rebuild switch --flake ~/projects/dotfiles/nix-darwin#macbook-pro";
+      };
+    };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
   };
 }
