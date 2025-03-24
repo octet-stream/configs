@@ -71,6 +71,7 @@ in
         work = "cd ~/work";
         gpom = "git push origin main";
         mac-rebuild = "darwin-rebuild switch --flake ~/projects/dotfiles/nix-darwin#macbook-pro";
+        mac-up = "nix flake update --flake ~/projects/dotfiles/nix-darwin";
       };
     };
     direnv = {
