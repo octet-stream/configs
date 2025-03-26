@@ -16,18 +16,12 @@ let
     .${pname};
 
   vscodeConfigPath = "${sysDir}/${vscodeConfigDirName}/User/settings.json";
-
 in
 {
   home = {
     username = "octetstream";
     homeDirectory = "/Users/octetstream";
     stateVersion = "24.11";
-
-    # User-specific packages not available system-wide
-    packages = [ ];
-
-    sessionVariables = { };
 
     sessionPath = [
       "/run/current-system/sw/bin"

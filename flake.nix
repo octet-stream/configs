@@ -33,7 +33,7 @@
       # $ darwin-rebuild switch --flake .#macbook-pro
       darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./nix-darwin/configuration.nix
+          ./darwin
 
           home-manager.darwinModules.home-manager
 
