@@ -177,10 +177,13 @@
           configuration
 
           home-manager.darwinModules.home-manager
+
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.octetstream = import ./home.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.octetstream = import ./home.nix;
+            };
           }
         ];
       };
