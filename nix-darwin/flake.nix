@@ -32,6 +32,7 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = with pkgs; [
+            git
             nixd # LSP for Nix
             nixfmt-rfc-style
             vim

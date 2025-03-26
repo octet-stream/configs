@@ -3,32 +3,33 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-24.11";
-    utils.url = "github:numtide/flake-utils";
+    systems.url = "github:nix-systems/default";
   };
 
   outputs =
     {
       nixpkgs,
-      utils,
+      systems,
       ...
     }:
-    utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
-        devShell =
-          with pkgs;
-          mkShell {
-            nativeBuildInputs = [
-              git
-              nixd
-              nixfmt-rfc-style
-              nodejs_23
-              corepack_23
-            ];
-          };
-      }
-    );
+    {
+      devShells = nixpkgs.lib.genAttrs (import systems) (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        {
+          default =
+            with pkgs;
+            mkShell {
+              nativeBuildInputs = [
+                nixd
+                nixfmt-rfc-style
+                nodejs_23
+                corepack_23
+              ];
+            };
+        }
+      );
+    };
 }
