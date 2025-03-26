@@ -180,6 +180,8 @@
 
           {
             home-manager = {
+              extraSpecialArgs = { inherit self; };
+              backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.octetstream = import ./home.nix;
