@@ -1,4 +1,4 @@
-# dotfiles
+# configs
 
 A home for my workstation configs and setup
 
