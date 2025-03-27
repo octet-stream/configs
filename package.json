@@ -4,7 +4,7 @@
   "name": "dotfiles",
   "version": "0.0.0",
   "author": "Nick K.",
-  "packageManager": "pnpm@10.6.4+sha1.2036e172356d1e918e11cb21d795160cd6696fa9",
+  "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6",
   "scripts": {
     "preinstall": "npx --yes only-allow pnpm",
     "prepare": "npx --yes is-in-ci || husky"
