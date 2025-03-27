@@ -3,6 +3,7 @@
   imports = [
     ./vscode
     ./zsh
+    ./direnv
   ];
   home = {
     username = "octetstream";
@@ -15,13 +16,5 @@
     ];
   };
 
-  programs = {
-    home-manager.enable = true; # Allow Home Manager to manage itself
-
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
-  };
+  programs.home-manager.enable = true; # Allow Home Manager to manage itself;
 }
