@@ -14,6 +14,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Manages homebrew installation
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+
     systems.url = "github:nix-systems/default";
   };
 
@@ -23,6 +39,7 @@
       nixpkgs,
       systems,
       nix-darwin,
+      nix-homebrew,
       home-manager,
       ...
     }:
@@ -35,6 +52,7 @@
         modules = [
           ./darwin
 
+          nix-homebrew.darwinModules.nix-homebrew
           home-manager.darwinModules.home-manager
 
           {
@@ -66,6 +84,7 @@
               nativeBuildInputs = [
                 nixd
                 nixfmt-rfc-style
+                bash-language-server
 
                 # Corepack is broken prior v0.31.x, so use Node.js v23 for now, which includes it
                 nodejs_23

@@ -1,4 +1,9 @@
-{ self, pkgs, ... }:
+{
+  self,
+  config,
+  pkgs,
+  ...
+}:
 {
   nixpkgs = {
     config.allowUnfree = true;
@@ -76,19 +81,41 @@
     postgresql
   ];
 
-  # Homebrew configuration
+  # Homebrew _installation_ configuration
+  nix-homebrew = {
+    enable = true;
+    mutableTaps = false;
+    autoMigrate = true;
+    enableRosetta = true;
+    user = "octetstream";
+
+    taps = {
+      "homebrew/homebrew-core" = self.inputs.homebrew-core;
+      "homebrew/homebrew-cask" = self.inputs.homebrew-cask;
+    };
+  };
+
+  # Homebrew configuration & packages
   homebrew = {
     enable = true;
+    global.autoUpdate = false;
+
     onActivation = {
-      autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
     };
+
+    # Repositories
+    taps = builtins.attrNames config.nix-homebrew.taps;
+
+    # Packages
     brews = [
       "git-extras" # TODO: Install it from nixpkgs instead
       "pulumi" # This one is up-to-date, unlike in nixpkgs
       "mysql" # This was is missing from nixpkgs
     ];
+
+    # Apps
     casks = [
       # Browsers
       "firefox" # TODO: Move Fixfox to Home Manager
@@ -130,6 +157,7 @@
       "qbittorrent" # BitTorrent client
     ];
 
+    # Mac AppStore apps managed by MAS
     masApps = {
       Telegram = 747648890;
       Outline = 1356178125;
