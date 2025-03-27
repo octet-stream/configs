@@ -31,7 +31,7 @@ in
     file = {
       # Note: To make a writable link to the original file use config.lib.file.mkOutOfStoreSymlink function and point to a _full_ path using a string instead of a _path_ type
       ${vscodeConfigPath}.source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/projects/dotfiles/vscode/settings.json";
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/projects/configs/vscode/settings.json";
     };
   };
 
