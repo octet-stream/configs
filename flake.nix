@@ -31,6 +31,20 @@
     };
 
     systems.url = "github:nix-systems/default";
+
+    # Fix for apps symlinks managed by Nix on macOS
+    mac-app-util.url = "github:hraban/mac-app-util";
+
+    # VSCode extensions
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix4vscode = {
+      url = "github:nix-community/nix4vscode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -40,6 +54,7 @@
       systems,
       nix-darwin,
       nix-homebrew,
+      mac-app-util,
       home-manager,
       ...
     }:
@@ -52,6 +67,7 @@
         modules = [
           ./darwin
 
+          mac-app-util.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
           home-manager.darwinModules.home-manager
 

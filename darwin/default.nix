@@ -5,18 +5,29 @@
   ...
 }:
 let
+  homeRoot = "/Users/octetstream";
+
   prependAppsPath = builtins.map (name: /Applications/${name});
 
   prependSystemAppsPath = builtins.map (name: /System/Applications/${name});
+
+  preprendHomeManagerAppsPath = builtins.map (
+    name: "${homeRoot}/Applications/Home Manager Apps/${name}"
+  );
 in
 {
   nixpkgs = {
     config.allowUnfree = true;
     hostPlatform = "aarch64-darwin";
+
+    overlays = [
+      self.inputs.nix-vscode-extensions.overlays.default
+      self.inputs.nix4vscode.overlays.forVscode
+    ];
   };
 
   # TODO: Move this to home manager
-  users.users.octetstream.home = "/Users/octetstream";
+  users.users.octetstream.home = homeRoot;
 
   # Auto upgrade nix package and the daemon service using version from this package.
   nix.package = pkgs.nixVersions.latest;
@@ -52,8 +63,10 @@ in
             "Spark.app"
             "Telegram.app"
             "Discord.app"
-            "Visual Studio Code.app"
+            # "Visual Studio Code.app"
           ]
+
+          ++ preprendHomeManagerAppsPath [ "Visual Studio Code.app" ]
 
           ++ prependSystemAppsPath [
             "Music.app"

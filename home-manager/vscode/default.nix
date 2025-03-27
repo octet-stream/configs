@@ -1,12 +1,48 @@
-{ ... }:
+{ pkgs, ... }:
 {
   config = {
     programs.vscode = {
       enable = true;
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck = false;
+      enableUpdateCheck = false; # Disable VSCode self-update and let Home Manager to manage VSCode versions instead.
+      enableExtensionUpdateCheck = false; # Disable extensions auto-update and let nix-vscode-extensions and nix4vscode manage updates and extensions
 
-      extensions = [ ]; # TODO: Manage extensions from Nix
+      # List of VSCode extensions managed by Nix sourced from nix-vscode-extensions and nix4vscode.
+      extensions =
+        with pkgs.vscode-marketplace;
+        [ ]
+
+        # Some extensions from this repo may break VSCode. If that happens - try and move them to the second list one by one
+        ++ [
+          aaron-bond.better-comments
+          ahmadalli.vscode-nginx-conf
+          arrterian.nix-env-selector
+          astro-build.astro-vscode
+          bierner.lit-html
+          biomejs.biome
+          bradlc.vscode-tailwindcss
+          dbaeumer.vscode-eslint
+          editorconfig.editorconfig
+          firefox-devtools.vscode-firefox-debug
+          github.vscode-github-actions
+          graphql.vscode-graphql
+          graphql.vscode-graphql-syntax
+          jnoortheen.nix-ide
+          mkhl.direnv
+          ms-azuretools.vscode-docker
+          ms-vscode.sublime-keybindings
+          orta.vscode-twoslash-queries
+          pinage404.nix-extension-pack
+          sdras.night-owl
+          styled-components.vscode-styled-components
+          unifiedjs.vscode-mdx
+          vue.volar
+          yoavbls.pretty-ts-errors
+        ]
+
+        ++ pkgs.forVscode [
+          "ms-vscode-remote.remote-containers.0.397.0"
+          "tamasfe.even-better-toml"
+        ];
 
       userSettings = {
         "editor.minimap.enabled" = false;
