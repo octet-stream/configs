@@ -1,0 +1,42 @@
+{ ... }:
+{
+  config = {
+    programs.vscode = {
+      enable = true;
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
+
+      extensions = [ ]; # TODO: Manage extensions from Nix
+
+      userSettings = {
+        "editor.minimap.enabled" = false;
+        "editor.renderWhitespace" = "all";
+        "breadcrumbs.enabled" = false;
+        "editor.cursorBlinking" = "solid";
+        "window.commandCenter" = false;
+        "editor.tabSize" = 2;
+        "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
+        "editor.stickyScroll.enabled" = false;
+        "workbench.startupEditor" = "none";
+        "nix.serverPath" = "nixd";
+        "nix.enableLanguageServer" = true;
+        "nix.serverSettings" = {
+          nixd.formatting.command = [ "nixfmt" ];
+        };
+        "files.associations" = {
+          "flake.lock" = "json";
+        };
+        "[markdown]" = {
+          "editor.wordWrap" = "off";
+        };
+        "typescript.updateImportsOnFileMove.enabled" = "always";
+        "workbench.colorTheme" = "Night Owl (No Italics)";
+        "emmet.triggerExpansionOnTab" = true;
+        "emmet.includeLanguages" = {
+          "astro" = "html";
+        };
+        "chat.commandCenter.enabled" = false; # Disable copilot
+      };
+    };
+  };
+}
