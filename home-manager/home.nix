@@ -37,18 +37,22 @@ in
 
   programs = {
     home-manager.enable = true;
+
     zsh = {
       enable = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell";
+
         plugins = [
           "git"
           "fnm"
         ];
       };
+
       initExtra = ''
         # Preferred editor for local and remote sessions
         if [[ -n $SSH_CONNECTION ]]; then
@@ -60,6 +64,7 @@ in
         # Enable fnm hook
         eval "$(fnm env --use-on-cd)"
       '';
+
       shellAliases = {
         projects = "cd ~/projects";
         work = "cd ~/work";
@@ -68,6 +73,7 @@ in
         mac-up = "nix flake update --flake ~/projects/dotfiles";
       };
     };
+
     direnv = {
       enable = true;
       enableZshIntegration = true;

@@ -4,6 +4,11 @@
   pkgs,
   ...
 }:
+let
+  prependAppsPath = builtins.map (name: /Applications/${name});
+
+  prependSystemAppsPath = builtins.map (name: /System/Applications/${name});
+in
 {
   nixpkgs = {
     config.allowUnfree = true;
@@ -30,29 +35,34 @@
     defaults = {
       screencapture.location = "~/Pictures/Screencaps";
       loginwindow.GuestEnabled = false;
+
       dock = {
         autohide = false; # always display dock
         mru-spaces = false; # disable spaces rearrangement based on recent apps use
         show-recents = false; # do not show recently closed apps
 
         # List of the apps pinned in the Dock
-        persistent-apps = [
-          "/Applications/Firefox.app"
-          "/Applications/Google Chrome.app"
-          "/Applications/Spark.app"
-          "/Applications/Telegram.app"
-          "/Applications/Discord.app"
+        persistent-apps =
+          [ ]
 
-          # Figure out how to get this path dynamically, if there's a way
-          "/Applications/Visual Studio Code.app"
+          ++ prependAppsPath [
+            "Firefox.app"
+            "Google Chrome.app"
+            "Spark.app"
+            "Telegram.app"
+            "Discord.app"
+            "Visual Studio Code.app"
+          ]
 
-          "/System/Applications/Music.app"
-          "/System/Applications/Photos.app"
-          "/System/Applications/Calendar.app"
-          "/System/Applications/TV.app"
-          "/Applications/iTerm.app"
-          "/System/Applications/System Settings.app"
-        ];
+          ++ prependSystemAppsPath [
+            "Music.app"
+            "Photos.app"
+            "Calendar.app"
+            "TV.app"
+          ]
+
+          ++ prependAppsPath [ "iTerm.app" ]
+          ++ prependSystemAppsPath [ "System Settings.app" ];
       };
 
       NSGlobalDomain = {
