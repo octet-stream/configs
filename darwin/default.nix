@@ -15,6 +15,7 @@ in
     hostPlatform = "aarch64-darwin";
   };
 
+  # TODO: Move this to home manager
   users.users.octetstream.home = "/Users/octetstream";
 
   # Auto upgrade nix package and the daemon service using version from this package.
@@ -41,7 +42,7 @@ in
         mru-spaces = false; # disable spaces rearrangement based on recent apps use
         show-recents = false; # do not show recently closed apps
 
-        # List of the apps pinned in the Dock
+        # List of pinned applications
         persistent-apps =
           [ ]
 
