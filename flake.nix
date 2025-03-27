@@ -61,7 +61,7 @@
               backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.octetstream = import ./nix-darwin/home.nix; # TODO: Move home-manager configuration to different directory
+              users.octetstream = import ./home-manager/home.nix;
             };
           }
         ];
