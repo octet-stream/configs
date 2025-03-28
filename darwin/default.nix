@@ -94,6 +94,9 @@ in
     git
     nixd # LSP for Nix
     nixfmt-rfc-style
+    nh
+    nix-output-monitor
+    nvd
     vim
     fnm # Node.js version manager written in Rust
     direnv
