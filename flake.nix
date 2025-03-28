@@ -14,6 +14,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # TODO: Remove once 4.x is released (and from home-manager)
+    nh.url = "github:viperML/nh";
+
     # Manages homebrew installation
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
@@ -71,6 +74,7 @@
           nix-homebrew.darwinModules.nix-homebrew
           home-manager.darwinModules.home-manager
 
+          # TODO: Move this to a module
           {
             home-manager = {
               extraSpecialArgs = { inherit self; };

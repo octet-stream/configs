@@ -23,11 +23,17 @@ in
     overlays = [
       self.inputs.nix-vscode-extensions.overlays.default
       self.inputs.nix4vscode.overlays.forVscode
+      self.inputs.nh.overlays.default
     ];
   };
 
-  # TODO: Move this to home manager
+  # TODO: Deduplicate username and home directory definitions
   users.users.octetstream.home = homeRoot;
+
+  networking = {
+    computerName = "Nick's Macbook Pro";
+    hostName = "macbook-pro";
+  };
 
   # Auto upgrade nix package and the daemon service using version from this package.
   nix.package = pkgs.nixVersions.latest;
@@ -91,21 +97,18 @@ in
   # or visit https://search.nixos.org
   # TODO: Move system packages into its own module
   environment.systemPackages = with pkgs; [
+    # essentials
     git
+    htop
+
+    # nix-related stuff
     nixd # LSP for Nix
     nixfmt-rfc-style
+
+    # Note: nh is disabled because it does not support darwin-nix yet
     nh
     nix-output-monitor
     nvd
-    vim
-    fnm # Node.js version manager written in Rust
-    direnv
-    bun
-    deno
-    rustup
-    ookla-speedtest
-    htop
-    postgresql
   ];
 
   # Homebrew _installation_ configuration
