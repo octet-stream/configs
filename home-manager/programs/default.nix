@@ -4,6 +4,7 @@
     ./direnv
     ./nh
     ./vscode
+    ./zed
     ./zsh
   ];
 }

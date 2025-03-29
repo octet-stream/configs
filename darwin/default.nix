@@ -156,10 +156,6 @@ in
       "iterm2"
       "ghostty" # TODO: Move it to home-manager
 
-      # Code editors
-      "visual-studio-code" # TODO: Find a good and stable way to manage extensidons and settings from Nix
-      "zed"
-
       # Dev tools
       "orbstack" # Docker Desktop alternative
       "linear-linear" # Projects management tool
