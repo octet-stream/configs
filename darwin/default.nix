@@ -69,7 +69,6 @@ in
             "Spark.app"
             "Telegram.app"
             "Discord.app"
-            # "Visual Studio Code.app"
           ]
 
           ++ preprendHomeManagerAppsPath [ "Visual Studio Code.app" ]
