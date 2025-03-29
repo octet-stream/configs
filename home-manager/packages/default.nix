@@ -10,5 +10,6 @@
     rustup
     ookla-speedtest
     postgresql
+    git-extras
   ];
 }

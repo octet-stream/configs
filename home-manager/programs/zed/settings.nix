@@ -11,8 +11,20 @@
 {
   programs.zed-editor.userSettings = {
     auto_update = false; # Disable auto updates to let home manager do the job
-    ui_font_size = 13;
+
     buffer_font_size = 13;
+    buffer_font_family = "Menlo";
+    buffer_font_fallbacks = [
+      "Monaco"
+      "Courier New"
+    ];
+
+    ui_font_size = 13;
+    ui_font_family = "Menlo";
+    ui_font_fallbacks = [
+      "Monaco"
+      "Courier New"
+    ];
 
     # Always render whitespaces, same as in VSCode
     show_whitespaces = "all";
