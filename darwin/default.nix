@@ -4,14 +4,14 @@
   ...
 }:
 let
-  homeRoot = "/Users/octetstream";
+  user = import ../users/octetstream.nix;
 
   prependAppsPath = builtins.map (name: /Applications/${name});
 
   prependSystemAppsPath = builtins.map (name: /System/Applications/${name});
 
   preprendHomeManagerAppsPath = builtins.map (
-    name: "${homeRoot}/Applications/Home Manager Apps/${name}"
+    name: "${user.homeDirectory}/Applications/Home Manager Apps/${name}"
   );
 in
 {
@@ -28,8 +28,7 @@ in
     ];
   };
 
-  # TODO: Deduplicate username and home directory definitions
-  users.users.octetstream.home = homeRoot;
+  users.users.${user.username}.home = user.homeDirectory;
 
   networking = {
     computerName = "Nick's Macbook Pro";

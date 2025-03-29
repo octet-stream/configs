@@ -61,6 +61,9 @@
       home-manager,
       ...
     }:
+    let
+      user = import ./users/octetstream.nix;
+    in
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#macbook-pro
@@ -81,7 +84,7 @@
               backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.octetstream = import ./home-manager/home.nix;
+              users.${user.username} = import ./home-manager/home.nix;
             };
           }
         ];

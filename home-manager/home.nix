@@ -5,14 +5,12 @@
     ./packages
   ];
   home = {
-    # TODO: Dedupe all user and home directory references
-    username = "octetstream";
-    homeDirectory = "/Users/octetstream";
+    inherit (import ../users/octetstream.nix) username homeDirectory;
 
     stateVersion = "24.11";
 
     sessionVariables = {
-      NH_FLAKE = config.programs.nh.flake; # TODO: This can be removed once
+      NH_FLAKE = config.programs.nh.flake; # TODO: This can be removed once home manager supports nh v4.x
     };
   };
 
