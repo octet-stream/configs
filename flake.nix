@@ -14,8 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: Remove this (and overlay) once 4.x is released (and from home-manager)
-    nh.url = "github:nix-community/nh";
+    # TODO: Remove this (and the overlay) once 4.x is released (and from home-manager)
+    nh = {
+      url = "github:nix-community/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Manages homebrew installation
     nix-homebrew = {
