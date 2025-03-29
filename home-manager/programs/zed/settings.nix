@@ -14,7 +14,18 @@
     ui_font_size = 13;
     buffer_font_size = 13;
 
+    # Always render whitespaces, same as in VSCode
+    show_whitespaces = "all";
+
+    # Use keymap from Sublime Text
     base_keymap = "SublimeText";
+
+    # Cursor settings with the same settings as I use for VSCode
+    cursor_blink = false;
+    cursor_shape = "bar";
+
+    # Use the same size as VSCode
+    tab_size = 2;
 
     theme = {
       mode = "dark";
