@@ -72,12 +72,12 @@
     {
       darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./darwin
-          ./home-manager
-
-          mac-app-util.darwinModules.default
+          mac-app-util.darwinModules.default # Enables fix for darwin managed apps
           nix-homebrew.darwinModules.nix-homebrew
           home-manager.darwinModules.home-manager
+
+          ./darwin
+          ./home-manager
         ];
 
         specialArgs = { inherit self; }; # Expose `self` to darwin nodules
