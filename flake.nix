@@ -14,8 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: Remove once 4.x is released (and from home-manager)
-    nh.url = "github:viperML/nh";
+    # TODO: Remove this (and overlay) once 4.x is released (and from home-manager)
+    nh.url = "github:nix-community/nh";
 
     # Manages homebrew installation
     nix-homebrew = {
@@ -23,16 +23,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Homebrew core repository
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
 
+    # Homebrew casks repository
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
 
+    # List of default supported systems
     systems.url = "github:nix-systems/default";
 
     # Fix for apps symlinks managed by Nix on macOS
@@ -44,6 +47,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Also VSCode extensions, with more individual approach
+    # I'll move to this one at some point
     nix4vscode = {
       url = "github:nix-community/nix4vscode";
       inputs.nixpkgs.follows = "nixpkgs";
