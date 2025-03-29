@@ -10,6 +10,7 @@
 { ... }:
 {
   programs.zed-editor.userSettings = {
+    auto_update = false; # Disable auto updates to let home manager do the job
     ui_font_size = 13;
     buffer_font_size = 13;
 

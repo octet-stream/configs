@@ -1,3 +1,5 @@
+# List of user-specific packages
+
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
