@@ -1,6 +1,5 @@
 {
   self,
-  config,
   pkgs,
   ...
 }:
@@ -16,6 +15,8 @@ let
   );
 in
 {
+  imports = [ ./homebrew ];
+
   nixpkgs = {
     config.allowUnfree = true;
     hostPlatform = "aarch64-darwin";
@@ -110,89 +111,4 @@ in
     nix-output-monitor
     nvd
   ];
-
-  # Homebrew _installation_ configuration
-  nix-homebrew = {
-    enable = true;
-    mutableTaps = false;
-    autoMigrate = true;
-    enableRosetta = true;
-    user = "octetstream";
-
-    taps = {
-      "homebrew/homebrew-core" = self.inputs.homebrew-core;
-      "homebrew/homebrew-cask" = self.inputs.homebrew-cask;
-    };
-  };
-
-  # Homebrew configuration & packages
-  homebrew = {
-    enable = true;
-    global.autoUpdate = false;
-
-    onActivation = {
-      upgrade = true;
-      cleanup = "zap";
-    };
-
-    # Repositories
-    taps = builtins.attrNames config.nix-homebrew.taps;
-
-    # Packages
-    brews = [
-      "git-extras" # TODO: Install it from nixpkgs instead
-      "pulumi" # This one is up-to-date, unlike in nixpkgs
-      "mysql" # This was is missing from nixpkgs
-    ];
-
-    # Apps
-    casks = [
-      # Browsers
-      "firefox" # TODO: Move Fixfox to Home Manager
-      "google-chrome" # TODO: Figure out how to manage extensions from home-manager or nix, maybe?
-      "tor-browser"
-
-      # Terminal emulators
-      "iterm2"
-      "ghostty" # TODO: Move it to home-manager
-
-      # Dev tools
-      "orbstack" # Docker Desktop alternative
-      "linear-linear" # Projects management tool
-
-      # Gaming
-      "whisky" # Wine wrapper built with SwiftUI
-      "openemu" # Retro consoles emulator
-
-      # Video players
-      "vlc"
-      "iina"
-
-      # DB Clients
-      "db-browser-for-sqlite" # SQLite
-      "sequel-ace" # MySQL and MariaDB
-
-      # Others
-      "lulu" # Firewall
-      "topnotch" # Simply hides the notch ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯
-      "jordanbaird-ice" # Menu bar manager
-      "appcleaner" # Uninstallation utility
-      "discord" # Messenger
-      "hot" # Temperature Sensors
-      "inkscape" # SVG editor
-      "qbittorrent" # BitTorrent client
-    ];
-
-    # Mac AppStore apps managed by MAS
-    masApps = {
-      Telegram = 747648890;
-      Outline = 1356178125;
-      Xcode = 497799835;
-      Gifski = 1351639930;
-      Lungo = 1263070803;
-      Spark = 1176895641;
-      "HEIC Converter" = 1294126402;
-      "Color Picker" = 1545870783;
-    };
-  };
 }
