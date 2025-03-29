@@ -61,32 +61,15 @@
       home-manager,
       ...
     }:
-    let
-      user = import ./users/octetstream.nix;
-    in
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#macbook-pro
-      # Or build & switch using:
-      # $ darwin-rebuild switch --flake .#macbook-pro
       darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
         modules = [
           ./darwin
+          ./home-manager
 
           mac-app-util.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
           home-manager.darwinModules.home-manager
-
-          # TODO: Move this to a module
-          {
-            home-manager = {
-              extraSpecialArgs = { inherit self; };
-              backupFileExtension = "backup";
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${user.username} = import ./home-manager/home.nix;
-            };
-          }
         ];
 
         specialArgs = { inherit self; }; # Expose `self` to darwin nodules
