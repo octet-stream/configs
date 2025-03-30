@@ -35,5 +35,6 @@
     "hot" # Temperature Sensors
     "inkscape" # SVG editor
     "qbittorrent" # BitTorrent client
+    "desktoppr" # Sets wallpapers via command line
   ];
 }
