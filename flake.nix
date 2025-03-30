@@ -58,7 +58,7 @@
     # Also VSCode extensions, with more individual approach
     # I'll move to this one at some point
     nix4vscode = {
-      url = "github:nix-community/nix4vscode";
+      url = "github:nix-community/nix4vscode/45819da9810ade1c2e6a7c82dcec5a28d2830ebf"; # ! latest version is broken, so I pin this commit for some time
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
