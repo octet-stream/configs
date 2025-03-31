@@ -1,11 +1,11 @@
-{ config, ... }:
+{ self, config, ... }:
 {
   imports = [
     ./programs
     ./packages
   ];
   home = {
-    inherit (import ../users/octetstream.nix) username homeDirectory;
+    inherit (self.users.octetstream) username homeDirectory;
 
     stateVersion = "24.11";
 

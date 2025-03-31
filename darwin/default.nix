@@ -4,7 +4,7 @@
   ...
 }:
 let
-  user = import ../users/octetstream.nix;
+  user = self.users.octetstream;
 in
 {
   imports = [

@@ -75,6 +75,10 @@
       ...
     }:
     {
+      users = {
+        octetstream = import ./users/octetstream.nix;
+      };
+
       darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
         modules = [
           mac-app-util.darwinModules.default # Enables fix for darwin managed apps
@@ -85,11 +89,9 @@
           ./home-manager
         ];
 
-        specialArgs = { inherit self; }; # Expose `self` to darwin nodules
+        # Expose additional args to darwin modules
+        specialArgs = { inherit self; };
       };
-
-      # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."macbook-pro".pkgs;
 
       devShells = nixpkgs.lib.genAttrs (import systems) (
         system:
