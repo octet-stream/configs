@@ -34,7 +34,7 @@
       yoavbls.pretty-ts-errors
     ]
 
-    ++ pkgs.forVscode [
+    ++ pkgs.nix4vscode.forVscode [
       "ms-vscode-remote.remote-containers.0.397.0"
       "tamasfe.even-better-toml"
     ];
