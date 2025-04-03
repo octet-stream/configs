@@ -13,7 +13,7 @@ in
 {
   system.defaults.dock = {
     autohide = false; # always display dock
-    mru-spaces = false; # disable spaces rearrangement based on recent apps use
+    mru-spaces = true; # enable virtual desktop rearrangement based on recent apps use
     show-recents = false; # do not show recently closed apps
 
     # List of pinned applications
