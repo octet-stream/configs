@@ -11,6 +11,7 @@
 
     sessionVariables = {
       NH_FLAKE = config.programs.nh.flake; # TODO: This can be removed once home manager supports nh v4.x
+      MOZ_LEGACY_PROFILES = "1"; # ! To workaround this issue: https://github.com/bandithedoge/nixpkgs-firefox-darwin/issues/14
     };
   };
 

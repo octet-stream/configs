@@ -20,8 +20,9 @@ in
     persistent-apps =
       [ ]
 
+      ++ preprendHomeManagerAppsPath [ "Firefox.app" ]
+
       ++ prependAppsPath [
-        "Firefox.app"
         "Google Chrome.app"
         "Spark.app"
         "Telegram.app"

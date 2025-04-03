@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Manages homebrew installation
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
@@ -59,6 +64,12 @@
     # I'll move to this one at some point
     nix4vscode = {
       url = "github:nix-community/nix4vscode/a39361da946a2710136be7fcda249908ba06dcb1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Adds Firefox support for macOS via overlays
+    firefox-darwin = {
+      url = "github:bandithedoge/nixpkgs-firefox-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

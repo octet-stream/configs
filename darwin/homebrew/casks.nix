@@ -2,7 +2,6 @@
 {
   homebrew.casks = [
     # Browsers
-    "firefox" # TODO: Move Fixfox to Home Manager
     "google-chrome" # TODO: Figure out how to manage extensions from home-manager or nix, maybe?
     "tor-browser"
 

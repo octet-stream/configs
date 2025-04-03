@@ -27,6 +27,8 @@ in
       self.inputs.nix-vscode-extensions.overlays.default
       self.inputs.nix4vscode.overlays.forVscode
       self.inputs.nh.overlays.default
+      self.inputs.nur.overlays.default
+      self.inputs.firefox-darwin.overlay
     ];
   };
 
