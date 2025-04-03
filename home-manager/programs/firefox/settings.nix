@@ -1,6 +1,48 @@
-{ self, ... }:
+{ self, lib, ... }:
 let
   inherit (self.users.octetstream) username;
+
+  topSites = [
+    {
+      label = "GitHub";
+      url = "https://github.com";
+    }
+
+    {
+      label = "YouTube";
+      url = "https://youtube.com";
+    }
+
+    {
+      label = "Derpibooru";
+      url = "https://derpibooru.org";
+    }
+
+    {
+      label = "Furbooru";
+      url = "https://furbooru.org";
+    }
+
+    {
+      label = "Bluesky";
+      url = "https://bsky.app";
+    }
+
+    {
+      label = "Reddit";
+      url = "https://reddit.com";
+    }
+
+    {
+      label = "Noodle (nix api search)";
+      url = "https://noodle.dev";
+    }
+
+    {
+      label = "React";
+      url = "https://react.dev";
+    }
+  ];
 in
 {
   programs.firefox.profiles.${username} = {
@@ -24,6 +66,26 @@ in
       "trailhead.firstrun.didSeeAboutWelcome" = true;
       "browser.bookmarks.restore_default_bookmarks" = false;
       "browser.bookmarks.addedImportButton" = true;
+
+      # Disable ads and sponsored sites
+      "browser.newtabpage.activity-stream.showSponsored" = false;
+      "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+      "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored" = false;
+      "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+      "browser.newtabpage.blocked" = lib.genAttrs [
+        "4gPpjkxgZzXPVtuEoAL9Ig==" # Facebook
+        "K00ILysCaEq8+bEqV/3nuw==" # Amazon
+      ] (_: 1);
+
+      # Enable topsites so FF will also show pinned shortcuts
+      "browser.newtabpage.activity-stream.feeds.topsites" = true;
+
+      # TODO: support dynamic number of rows
+      # Note: 8 per a row is supported
+      "browser.newtabpage.activity-stream.topSitesRows" = 1;
+
+      # List of pinned tabs
+      "browser.newtabpage.pinned" = builtins.toJSON topSites;
 
       # Disable telemetry
       "app.shield.optoutstudies.enabled" = false;
