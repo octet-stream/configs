@@ -40,6 +40,9 @@
     };
 
     "window.commandCenter" = false; # Disables command center panel on the top
-    "chat.commandCenter.enabled" = false; # Disable copilot
+
+    # Disable copilot
+    "chat.commandCenter.enabled" = false;
+    "chat.experimental.statusIndicator.enabled" = false;
   };
 }
