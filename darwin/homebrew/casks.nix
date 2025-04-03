@@ -35,5 +35,6 @@
     "inkscape" # SVG editor
     "qbittorrent" # BitTorrent client
     "desktoppr" # Sets wallpapers via command line
+    "keyboardcleantool" # Blocks all keyboard input when opened
   ];
 }
