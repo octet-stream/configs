@@ -42,7 +42,7 @@
     theme = {
       mode = "dark";
       light = "One Light";
-      dark = "Night Owl No Italics";
+      dark = "Halcyon";
     };
 
     features = {

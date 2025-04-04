@@ -6,5 +6,6 @@
     "biome"
     "nix"
     "night-owlz"
+    "halcyon"
   ];
 }
