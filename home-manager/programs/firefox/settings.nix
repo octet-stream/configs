@@ -49,6 +49,9 @@ in
     id = 0;
     isDefault = true;
     settings = {
+      # Disable auto updates, Home Manager will hanlde it
+      "app.update.auto" = false;
+
       # Auto-enable extensions managed by Nix
       "extensions.autoDisableScopes" = 0;
 
