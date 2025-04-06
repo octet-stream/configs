@@ -6,7 +6,7 @@
 
     clean = {
       enable = true;
-      extraArgs = "-k 5 -K 1w"; # Keep generations not older than 1 week old, but at least 5 of the last generations
+      extraArgs = "--keep 5 --keep-since 3d"; # Keep generations not older than 1 week old, but at least 5 of the last generations
     };
   };
 }
