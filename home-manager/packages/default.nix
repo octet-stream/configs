@@ -11,5 +11,6 @@
     ookla-speedtest
     postgresql
     git-extras
+    devenv
   ];
 }
