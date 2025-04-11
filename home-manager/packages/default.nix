@@ -1,6 +1,10 @@
 # List of user-specific packages
 
-{ pkgs, ... }:
+{
+  pkgsUnstable,
+  pkgs,
+  ...
+}:
 {
   home.packages = with pkgs; [
     vim
@@ -11,6 +15,6 @@
     ookla-speedtest
     postgresql
     git-extras
-    devenv
+    pkgsUnstable.devenv
   ];
 }

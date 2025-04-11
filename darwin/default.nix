@@ -1,5 +1,6 @@
 {
   self,
+  system,
   pkgs,
   ...
 }:
@@ -20,7 +21,7 @@ in
 
   nixpkgs = {
     config.allowUnfree = true;
-    hostPlatform = "aarch64-darwin";
+    hostPlatform = system;
 
     # Add overlays for nixpkgs to override some of the packages
     overlays = [
