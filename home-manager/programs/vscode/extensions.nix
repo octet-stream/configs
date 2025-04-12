@@ -38,5 +38,6 @@
       "ms-vscode-remote.remote-containers.0.397.0"
       "tamasfe.even-better-toml"
       "mads-hartmann.bash-ide-vscode"
+      "redhat.vscode-yaml"
     ];
 }
