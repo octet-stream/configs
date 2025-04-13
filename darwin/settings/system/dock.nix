@@ -29,7 +29,10 @@ in
         "Discord.app"
       ]
 
-      ++ preprendHomeManagerAppsPath [ "Visual Studio Code.app" ]
+      ++ preprendHomeManagerAppsPath [
+        "Visual Studio Code.app"
+        "Zed.app"
+      ]
 
       ++ prependSystemAppsPath [
         "Music.app"
