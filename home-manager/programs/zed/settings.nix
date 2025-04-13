@@ -48,5 +48,10 @@
     features = {
       copilot = false;
     };
+
+    languages.Nix.language_servers = [
+      "nixd"
+      "!nil"
+    ];
   };
 }
