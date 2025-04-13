@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgsUnstable, ... }:
 {
   imports = [
     ./settings.nix
@@ -7,5 +7,6 @@
 
   programs.zed-editor = {
     enable = true;
+    package = pkgsUnstable.zed-editor;
   };
 }
