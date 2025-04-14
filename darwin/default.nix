@@ -24,12 +24,12 @@ in
     hostPlatform = system;
 
     # Add overlays for nixpkgs to override some of the packages
-    overlays = [
-      self.inputs.nix-vscode-extensions.overlays.default
-      self.inputs.nix4vscode.overlays.forVscode
-      self.inputs.nh.overlays.default
-      self.inputs.nur.overlays.default
-      self.inputs.firefox-darwin.overlay
+    overlays = with self.inputs; [
+      nix-vscode-extensions.overlays.default
+      nix4vscode.overlays.forVscode
+      nh.overlays.default
+      nur.overlays.default
+      firefox-darwin.overlay
     ];
   };
 
