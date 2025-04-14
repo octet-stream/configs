@@ -1,6 +1,5 @@
 {
   self,
-  system,
   pkgs,
   ...
 }:
@@ -21,7 +20,6 @@ in
 
   nixpkgs = {
     config.allowUnfree = true;
-    hostPlatform = system;
 
     # Add overlays for nixpkgs to override some of the packages
     overlays = with self.inputs; [

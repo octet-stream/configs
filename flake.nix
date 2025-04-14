@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    easy-hosts.url = "github:tgirlcloud/easy-hosts";
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin/nix-darwin-24.11";
@@ -77,48 +79,23 @@
 
   outputs =
     {
-      self,
-      nixpkgs,
-      nixpkgs-unstable,
-      systems,
-      nix-darwin,
-      nix-homebrew,
-      mac-app-util,
-      home-manager,
+      flake-parts,
       ...
-    }:
-    {
-      users = {
-        octetstream = import ./users/octetstream.nix;
-      };
+    }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "aarch64-darwin" ];
+      imports = [ ./hosts ];
 
-      darwinConfigurations."macbook-pro" =
-        let
-          system = "aarch64-darwin";
-          pkgsUnstable = import nixpkgs-unstable { inherit system; };
-        in
-        nix-darwin.lib.darwinSystem {
-          modules = [
-            mac-app-util.darwinModules.default # Enables fix for darwin managed apps
-            nix-homebrew.darwinModules.nix-homebrew
-            home-manager.darwinModules.home-manager
-
-            ./darwin
-            ./home-manager
-          ];
-
-          # Expose additional args to darwin modules
-          specialArgs = { inherit self system pkgsUnstable; };
+      perSystem =
+        { pkgs, ... }:
+        {
+          devShells.default = import ./shell.nix { inherit pkgs; };
         };
 
-      devShells = nixpkgs.lib.genAttrs (import systems) (
-        system:
-        let
-          pkgs = import nixpkgs { inherit system; };
-        in
-        {
-          default = import ./shell.nix { inherit pkgs; };
-        }
-      );
+      flake = {
+        users = {
+          octetstream = import ./users/octetstream.nix;
+        };
+      };
     };
 }

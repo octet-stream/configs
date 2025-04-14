@@ -1,12 +1,11 @@
 {
   self,
-  system,
   pkgsUnstable,
   ...
 }:
 {
   home-manager = {
-    extraSpecialArgs = { inherit self system pkgsUnstable; };
+    extraSpecialArgs = { inherit self pkgsUnstable; };
     backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;

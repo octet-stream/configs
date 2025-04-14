@@ -1,6 +1,6 @@
-{ ... }:
+{ self, ... }:
 let
-  user = import ../../../users/octetstream.nix;
+  user = self.users.octetstream;
 
   prependAppsPath = builtins.map (name: /Applications/${name});
 
