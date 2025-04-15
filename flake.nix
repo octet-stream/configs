@@ -28,10 +28,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Homebrew package
+    homebrew = {
+      url = "github:Homebrew/brew/4.4.31"; # I'll have to bump the version by myself, because auto-updates are disabled
+      flake = false;
+    };
+
     # Manages homebrew installation
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nix-darwin.follows = "nix-darwin";
+      };
     };
 
     # Homebrew core repository
