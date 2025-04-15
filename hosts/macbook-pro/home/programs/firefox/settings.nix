@@ -34,7 +34,7 @@ let
     }
 
     {
-      label = "Noodle (nix api search)";
+      label = "Noogle (nix api search)";
       url = "https://noodle.dev";
     }
 
