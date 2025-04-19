@@ -44,5 +44,8 @@
     # Disable copilot
     "chat.commandCenter.enabled" = false;
     "chat.experimental.statusIndicator.enabled" = false;
+
+    # Disable redhat telemetry (in their yaml extension)
+    "redhat.telemetry.enabled" = false;
   };
 }
