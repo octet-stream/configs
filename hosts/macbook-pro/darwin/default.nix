@@ -25,7 +25,6 @@ in
     overlays = with self.inputs; [
       nix-vscode-extensions.overlays.default
       nix4vscode.overlays.forVscode
-      nh.overlays.default
       nur.overlays.default
       firefox-darwin.overlay
     ];

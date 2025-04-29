@@ -1,7 +1,8 @@
-{ config, ... }:
+{ config, pkgsUnstable, ... }:
 {
   programs.nh = {
     enable = true;
+    package = pkgsUnstable.nh;
     flake = "${config.home.homeDirectory}/projects/configs";
 
     clean = {
