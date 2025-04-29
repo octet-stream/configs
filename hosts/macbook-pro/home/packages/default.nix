@@ -16,5 +16,6 @@
     postgresql
     git-extras
     pkgsUnstable.devenv
+    pkgsUnstable.pulumi-bin
   ];
 }
