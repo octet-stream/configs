@@ -17,12 +17,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: Remove this (and the overlay) once 4.x is released (and from home-manager)
-    nh = {
-      url = "github:nix-community/nh/9e9a4590b38b62b28f07a1fae973ce7b6ca0687a";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
