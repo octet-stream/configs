@@ -3,7 +3,7 @@
 }:
 with pkgs;
 mkShell {
-  nativeBuildInputs = [
+  packages = [
     nixd
     nixfmt-rfc-style
     bash-language-server
