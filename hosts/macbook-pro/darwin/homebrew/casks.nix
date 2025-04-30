@@ -18,7 +18,6 @@
     "openemu" # Retro consoles emulator
 
     # Video players
-    "vlc"
     "iina"
 
     # DB Clients
