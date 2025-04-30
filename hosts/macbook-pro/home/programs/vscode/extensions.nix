@@ -39,5 +39,6 @@
       "tamasfe.even-better-toml"
       "mads-hartmann.bash-ide-vscode"
       "redhat.vscode-yaml"
+      "waderyan.gitblame"
     ];
 }

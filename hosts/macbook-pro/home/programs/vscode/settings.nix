@@ -23,6 +23,9 @@
       nixd.formatting.command = [ "nixfmt" ];
     };
 
+    # Nix environment selector
+    "nixEnvSelector.suggestion" = false; # Disable suggestions
+
     "files.associations" = {
       "flake.lock" = "json"; # VSCode doesn't recognize flake.lock as JSON by default even with Nix IDE installed
     };
@@ -43,7 +46,7 @@
 
     # Disable copilot
     "chat.commandCenter.enabled" = false;
-    "chat.experimental.statusIndicator.enabled" = false;
+    "chat.agent.enabled" = false;
 
     # Disable redhat telemetry (in their yaml extension)
     "redhat.telemetry.enabled" = false;
