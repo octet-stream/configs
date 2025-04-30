@@ -41,7 +41,7 @@ in
         "TV.app"
       ]
 
-      ++ prependAppsPath [ "iTerm.app" ]
+      ++ preprendHomeManagerAppsPath [ "Ghostty.app" ]
       ++ prependSystemAppsPath [ "System Settings.app" ];
   };
 }
