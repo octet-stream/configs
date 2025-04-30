@@ -7,7 +7,7 @@
 
     # Terminal emulators
     "iterm2"
-    "ghostty" # TODO: Move it to home-manager
+    # "ghostty" # TODO: Move it to home-manager
 
     # Dev tools
     "orbstack" # Docker Desktop alternative
