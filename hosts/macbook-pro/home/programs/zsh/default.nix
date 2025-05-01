@@ -1,19 +1,14 @@
 { ... }:
 {
+  imports = [
+    ./oh-my-zsh.nix
+    ./aliases.nix
+  ];
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-
-      plugins = [
-        "git"
-        "fnm"
-      ];
-    };
 
     initExtra = ''
       # Preferred editor for local and remote sessions
@@ -26,13 +21,5 @@
       # Enable fnm hook
       eval "$(fnm env --use-on-cd)"
     '';
-
-    shellAliases = {
-      projects = "cd ~/projects";
-      work = "cd ~/work";
-      gpom = "git push origin main";
-      mac-rebuild = "nh darwin switch";
-      mac-up = "nix flake update --flake ~/projects/configs";
-    };
   };
 }
