@@ -1,40 +1,38 @@
 { ... }:
 {
-  config = {
-    programs.zsh = {
+  programs.zsh = {
+    enable = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    oh-my-zsh = {
       enable = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
+      theme = "robbyrussell";
 
-      oh-my-zsh = {
-        enable = true;
-        theme = "robbyrussell";
+      plugins = [
+        "git"
+        "fnm"
+      ];
+    };
 
-        plugins = [
-          "git"
-          "fnm"
-        ];
-      };
+    initExtra = ''
+      # Preferred editor for local and remote sessions
+      if [[ -n $SSH_CONNECTION ]]; then
+        export EDITOR="vim"
+      else
+        export EDITOR="code -wr"
+      fi
 
-      initExtra = ''
-        # Preferred editor for local and remote sessions
-        if [[ -n $SSH_CONNECTION ]]; then
-          export EDITOR="vim"
-        else
-          export EDITOR="code -wr"
-        fi
+      # Enable fnm hook
+      eval "$(fnm env --use-on-cd)"
+    '';
 
-        # Enable fnm hook
-        eval "$(fnm env --use-on-cd)"
-      '';
-
-      shellAliases = {
-        projects = "cd ~/projects";
-        work = "cd ~/work";
-        gpom = "git push origin main";
-        mac-rebuild = "nh darwin switch";
-        mac-up = "nix flake update --flake ~/projects/configs";
-      };
+    shellAliases = {
+      projects = "cd ~/projects";
+      work = "cd ~/work";
+      gpom = "git push origin main";
+      mac-rebuild = "nh darwin switch";
+      mac-up = "nix flake update --flake ~/projects/configs";
     };
   };
 }
