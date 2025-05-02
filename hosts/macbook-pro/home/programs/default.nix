@@ -2,6 +2,7 @@
 {
   imports = [
     ./direnv
+    ./fd
     ./firefox
     ./ghostty
     ./nh
