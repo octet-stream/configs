@@ -5,7 +5,6 @@
     "dockerfile"
     "biome"
     "nix"
-    "night-owlz"
     "halcyon"
   ];
 }
