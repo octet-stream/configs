@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./bat
     ./direnv
     ./fd
     ./firefox

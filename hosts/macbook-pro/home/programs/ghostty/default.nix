@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./bat-integration-fix.nix
     ./settings.nix
   ];
 
