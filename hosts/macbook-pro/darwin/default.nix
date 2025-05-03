@@ -32,7 +32,7 @@ in
 
   users.users.${user.username}.home = user.homeDirectory;
 
-  # Enable Touch ID auth authentication for sudo
+  # Enable Touch ID authorization for sudo
   # ! This is deprecated option. Replace it with the next line when 25.x branch is released
   security.pam.enableSudoTouchIdAuth = true;
   # security.pam.services.sudo_local.touchIdAuth = true;
