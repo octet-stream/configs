@@ -2,19 +2,17 @@
 {
   homebrew.casks = [
     # Browsers
-    "google-chrome" # TODO: Figure out how to manage extensions from home-manager or nix, maybe?
+    "google-chrome" # ?: Maybe move it to Home Manager, same as Firefox
     "tor-browser"
 
     # Terminal emulators
     "iterm2"
-    # "ghostty" # TODO: Move it to home-manager
 
     # Dev tools
     "orbstack" # Docker Desktop alternative
     "linear-linear" # Projects management tool
 
     # Gaming
-    "whisky" # Wine wrapper built with SwiftUI
     "openemu" # Retro consoles emulator
 
     # Video players
