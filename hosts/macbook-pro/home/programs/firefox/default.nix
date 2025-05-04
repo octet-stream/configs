@@ -1,19 +1,23 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./extensions.nix
     ./settings.nix
   ];
 
-  programs.firefox = {
-    enable = true;
+  programs.firefox = lib.mkMerge [
+    {
+      enable = true;
+    }
 
-    # Override the package, because default package doesn't support macOS.
+    # Override the package, because default package doesn't support macOS (yet).
     #
     # Note that [`firefox-bin`](https://github.com/bandithedoge/nixpkgs-firefox-darwin) is not universal,
     # so the default version is set for Linux
-    package = if pkgs.stdenv.isDarwin then pkgs.firefox-bin else null;
-  };
+    (lib.mkIf pkgs.stdenv.isDarwin {
+      package = pkgs.firefox-bin;
+    })
+  ];
 
   # ! To workaround these issues:
   # ! https://github.com/bandithedoge/nixpkgs-firefox-darwin/issues/14
