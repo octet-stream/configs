@@ -10,6 +10,21 @@
     "editor.defaultFormatter": "jnoortheen.nix-ide",
     "editor.formatOnSave": true
   },
+
+  "nix.serverSettings": {
+    "nixd": {
+      "options": {
+        "home-manager": {
+          "expr": "(builtins.getFlake \"${workspaceFolder}\").darwinConfigurations.macbook-pro.options.home-manager.users.type.getSubOptions []"
+        },
+
+        "nix-darwin": {
+          "expr": "(builtins.getFlake \"${workspaceFolder}\").darwinConfigurations.macbook-pro.options"
+        }
+      }
+    }
+  },
+
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
