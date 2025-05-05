@@ -17,7 +17,7 @@
     window-height = 20;
 
     # Cursor
-    cursor-style = "block";
+    cursor-style = "bar";
     cursor-style-blink = false;
     shell-integration-features = "no-cursor"; # Disable shell integration for cursor, otherwise it will not pick up my settings
   };
