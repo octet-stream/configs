@@ -53,5 +53,11 @@
       "nixd"
       "!nil"
     ];
+
+    # Vim mode settings
+    vim_mode = true;
+    vim = {
+      default_mode = "insert";
+    };
   };
 }
