@@ -24,7 +24,7 @@
 
     # Homebrew package
     homebrew = {
-      url = "github:Homebrew/brew/4.4.32"; # I'll have to bump the version by myself, because auto-updates are disabled
+      url = "github:Homebrew/brew/4.5.1"; # I'll have to bump the version by myself, because auto-updates are disabled
       flake = false;
     };
 
@@ -70,6 +70,11 @@
     # I'll move to this one at some point
     nix4vscode = {
       url = "github:nix-community/nix4vscode/a39361da946a2710136be7fcda249908ba06dcb1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zed-extensions = {
+      url = "github:DuskSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

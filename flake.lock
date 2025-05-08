@@ -185,16 +185,16 @@
     "homebrew": {
       "flake": false,
       "locked": {
-        "lastModified": 1745335127,
-        "narHash": "sha256-W6zhvoTwS1AdvNFHSYaJLSWbuTi3KilxuNBeudMAyso=",
+        "lastModified": 1746503982,
+        "narHash": "sha256-eh4YtiF+wfu2RhOVAHta2zKSpWaYFDWvScBs1l+mD44=",
         "owner": "Homebrew",
         "repo": "brew",
-        "rev": "12a3d4a6f1eedf483855716b989d828443438f79",
+        "rev": "541d8879c4ba9b868aa8d6e1b54a5813d7621e39",
         "type": "github"
       },
       "original": {
         "owner": "Homebrew",
-        "ref": "4.4.32",
+        "ref": "4.5.1",
         "repo": "brew",
         "type": "github"
       }
@@ -446,7 +446,8 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
-        "systems": "systems_4"
+        "systems": "systems_4",
+        "zed-extensions": "zed-extensions"
       }
     },
     "rust-overlay": {
@@ -459,6 +460,27 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "954582a766a50ebef5695a9616c93b5386418c08",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "zed-extensions",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746585402,
+        "narHash": "sha256-Pf+ufu6bYNA1+KQKHnGMNEfTwpD9ZIcAeLoE2yPWIP0=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "72dd969389583664f87aa348b3458f2813693617",
         "type": "github"
       },
       "original": {
@@ -546,6 +568,27 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "zed-extensions": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay_2"
+      },
+      "locked": {
+        "lastModified": 1746657264,
+        "narHash": "sha256-LMbV0vKG4RuMl5vG+QmjBf8gui5SQdenWoD/uGx931s=",
+        "owner": "DuskSystems",
+        "repo": "nix-zed-extensions",
+        "rev": "d64eeac88809d3a94118f70aaa4ce394022f9660",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DuskSystems",
+        "repo": "nix-zed-extensions",
         "type": "github"
       }
     }

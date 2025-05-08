@@ -27,6 +27,7 @@ in
       nix4vscode.overlays.forVscode
       nur.overlays.default
       firefox-darwin.overlay
+      zed-extensions.overlays.default
     ];
   };
 

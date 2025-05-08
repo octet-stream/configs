@@ -8,13 +8,16 @@
 {
   home.packages = with pkgs; [
     vim
-    fnm # Node.js version manager written in Rust
+    fnm
     bun
     deno
     rustup
     ookla-speedtest
     postgresql
     git-extras
+    nginx-language-server
+
+    # Unstable branch
     pkgsUnstable.devenv
     pkgsUnstable.pulumi-bin
 

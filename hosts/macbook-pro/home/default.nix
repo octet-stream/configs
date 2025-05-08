@@ -15,6 +15,9 @@
       # Enables patches for home manager installed apps
       # Turns out this has to be enabled for home manager too
       mac-app-util.homeManagerModules.default
+
+      # Adds zed-extensions to programs attrset
+      zed-extensions.homeManagerModules.default
     ];
   };
 }
