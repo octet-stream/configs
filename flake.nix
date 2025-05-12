@@ -24,13 +24,15 @@
 
     # Homebrew package
     homebrew = {
-      url = "github:Homebrew/brew/4.5.1"; # I'll have to bump the version by myself, because auto-updates are disabled
+      url = "github:Homebrew/brew/4.5.2"; # I'll have to bump the version by myself, because auto-updates are disabled
       flake = false;
     };
 
     # Manages homebrew installation
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
+      # ! Pinned to specific commit because of a breaking change. See: https://github.com/zhaofengli/nix-homebrew/issues/87
+      # ! The hash can only be removed after nixos-25.05 is released
+      url = "github:zhaofengli/nix-homebrew/4945f477bc346d6cd432c67642621f33e6a9b201";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nix-darwin.follows = "nix-darwin";
