@@ -23,7 +23,6 @@
       graphql.vscode-graphql-syntax
       jnoortheen.nix-ide
       mkhl.direnv
-      ms-azuretools.vscode-docker
       ms-vscode.sublime-keybindings
       orta.vscode-twoslash-queries
       pinage404.nix-extension-pack
@@ -32,6 +31,7 @@
       unifiedjs.vscode-mdx
       vue.volar
       yoavbls.pretty-ts-errors
+      ms-azuretools.vscode-containers
     ]
 
     ++ pkgs.nix4vscode.forVscode [
