@@ -79,12 +79,6 @@
       url = "github:DuskSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Adds Firefox support for macOS via overlays
-    firefox-darwin = {
-      url = "github:bandithedoge/nixpkgs-firefox-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
