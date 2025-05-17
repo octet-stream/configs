@@ -1,9 +1,12 @@
-# Overrides Firefox package, because default package doesn't support macOS (yet).
-#
-# Note that [`firefox-bin`](https://github.com/bandithedoge/nixpkgs-firefox-darwin) is not universal,
-# so the default version is set for Linux
+# Overrides Firefox package to use nixos-unstable, because current stable release has no support for aarch64-darwin
+# TODO: Remove this fix after I switch to nixos-25.05
 
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  pkgsUnstable,
+  lib,
+  ...
+}:
 lib.mkIf pkgs.stdenv.isDarwin {
-  programs.firefox.package = pkgs.firefox-bin;
+  programs.firefox.package = pkgsUnstable.firefox;
 }
