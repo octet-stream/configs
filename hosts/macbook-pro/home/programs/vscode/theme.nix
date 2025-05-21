@@ -1,5 +1,5 @@
-{ ... }:
-{
+{ config, lib, ... }:
+lib.mkIf config.programs.vscode.enable {
   catppuccin.vscode = {
     enable = true;
 
