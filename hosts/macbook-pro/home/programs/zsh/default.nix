@@ -10,7 +10,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initExtra = ''
+    initContent = ''
       # Preferred editor for local and remote sessions
       if [[ -n $SSH_CONNECTION ]]; then
         export EDITOR="vim"
