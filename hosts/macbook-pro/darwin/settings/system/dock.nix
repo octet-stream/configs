@@ -2,9 +2,9 @@
 let
   user = self.users.octetstream;
 
-  prependAppsPath = builtins.map (name: /Applications/${name});
+  prependAppsPath = builtins.map (name: "/Applications/${name}");
 
-  prependSystemAppsPath = builtins.map (name: /System/Applications/${name});
+  prependSystemAppsPath = builtins.map (name: "/System/Applications/${name}");
 
   preprendHomeManagerAppsPath = builtins.map (
     name: "${user.homeDirectory}/Applications/Home Manager Apps/${name}"
