@@ -40,5 +40,6 @@
       "mads-hartmann.bash-ide-vscode"
       "redhat.vscode-yaml"
       "waderyan.gitblame"
+      "catppuccin.catppuccin-vsc-icons"
     ];
 }
