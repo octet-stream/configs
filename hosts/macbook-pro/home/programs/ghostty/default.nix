@@ -3,6 +3,7 @@
   imports = [
     ./fixes
     ./settings.nix
+    ./keybind.nix
   ];
 
   programs.ghostty = {
