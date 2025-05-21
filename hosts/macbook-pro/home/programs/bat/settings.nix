@@ -1,6 +1,4 @@
 { ... }:
 {
-  programs.bat.config = {
-    theme = "Sublime Snazzy";
-  };
+  programs.bat.config = { };
 }

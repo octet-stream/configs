@@ -13,7 +13,6 @@
     "editor.stickyScroll.enabled" = false;
 
     # Workbench settings
-    "workbench.colorTheme" = "Night Owl (No Italics)";
     "workbench.startupEditor" = "none";
 
     # Nix IDE settings

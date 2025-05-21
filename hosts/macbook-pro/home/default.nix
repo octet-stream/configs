@@ -18,6 +18,8 @@
 
       # Adds zed-extensions to programs attrset
       zed-extensions.homeManagerModules.default
+
+      catppuccin.homeModules.catppuccin
     ];
   };
 }

@@ -39,12 +39,6 @@
     # Use the same size as VSCode
     tab_size = 2;
 
-    theme = {
-      mode = "dark";
-      light = "One Light";
-      dark = "Halcyon";
-    };
-
     features = {
       copilot = false;
     };

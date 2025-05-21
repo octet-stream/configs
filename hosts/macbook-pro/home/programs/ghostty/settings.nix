@@ -10,7 +10,6 @@
 {
   programs.ghostty.settings = {
     auto-update = "off";
-    theme = "Snazzy";
 
     # Window size
     window-width = 90;
