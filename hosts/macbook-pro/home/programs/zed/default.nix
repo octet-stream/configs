@@ -1,8 +1,9 @@
 { pkgsUnstable, ... }:
 {
   imports = [
-    ./settings.nix
     ./extensions.nix
+    ./settings.nix
+    ./theme.nix
   ];
 
   programs.zed-editor = {
