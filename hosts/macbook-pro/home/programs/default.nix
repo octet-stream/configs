@@ -2,6 +2,7 @@
 {
   imports = [
     ./bat
+    ./btop
     ./direnv
     ./fd
     ./firefox
