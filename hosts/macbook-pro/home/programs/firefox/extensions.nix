@@ -4,7 +4,7 @@ let
   inherit (pkgs.nur.repos.rycee) firefox-addons;
 in
 {
-  programs.firefox.profiles.${username}.extensions = with firefox-addons; [
+  programs.firefox.profiles.${username}.extensions.packages = with firefox-addons; [
     ublock-origin
     wappalyzer
     onepassword-password-manager
