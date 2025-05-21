@@ -1,0 +1,4 @@
+{ ... }:
+{
+  catppuccin.ghostty.enable = true;
+}
