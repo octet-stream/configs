@@ -13,6 +13,8 @@
       graphql
       svelte
       nginx
+      catppuccin
+      catppuccin-icons
     ];
   };
 }

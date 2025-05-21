@@ -40,9 +40,15 @@
     tab_size = 2;
 
     theme = {
-      mode = "dark";
-      light = "One Light";
-      dark = "Halcyon";
+      mode = "system";
+      light = "Catppuccin Latte - No Italics";
+      dark = "Catppuccin Mocha - No Italics";
+    };
+
+    icon_theme = {
+      mode = "system";
+      light = "Catppuccin Latte";
+      dark = "Catppuccin Mocha";
     };
 
     features = {
