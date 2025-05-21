@@ -4,6 +4,7 @@
     ./fixes
     ./settings.nix
     ./keybind.nix
+    ./theme.nix
   ];
 
   programs.ghostty = {
