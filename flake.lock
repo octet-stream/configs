@@ -17,6 +17,26 @@
         "type": "github"
       }
     },
+    "catppuccin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1747519437,
+        "narHash": "sha256-uv9Wv59d+mckS2CkorOF484wp2G5TNGijdoBZ5RkAk0=",
+        "owner": "catppuccin",
+        "repo": "nix",
+        "rev": "3ba714046ee32373e88166e6e9474d6ae6a5b734",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "cl-nix-lite": {
       "locked": {
         "lastModified": 1728174978,
@@ -427,6 +447,7 @@
     },
     "root": {
       "inputs": {
+        "catppuccin": "catppuccin",
         "easy-hosts": "easy-hosts",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",

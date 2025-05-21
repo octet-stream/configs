@@ -77,6 +77,11 @@
       url = "github:DuskSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
