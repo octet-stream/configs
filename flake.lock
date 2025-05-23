@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747519437,
-        "narHash": "sha256-uv9Wv59d+mckS2CkorOF484wp2G5TNGijdoBZ5RkAk0=",
+        "lastModified": 1747989804,
+        "narHash": "sha256-FACXQA+OH5jHx/MZIJoGNxg5H5XolsxOMmBLMWUCIQs=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "3ba714046ee32373e88166e6e9474d6ae6a5b734",
+        "rev": "21e495cba91b63e8897d1a00155d58787d0e6e18",
         "type": "github"
       },
       "original": {
@@ -202,11 +202,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1747828706,
-        "narHash": "sha256-ATk5MosYiZ19uZ7VkG+uAOwEr/gLf7VgJNKJSlWy0mY=",
+        "lastModified": 1748031135,
+        "narHash": "sha256-gKot9XsgFpXUhgpUBTuoAXyz28lQdfB7yKr1XtI+zTY=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "1be6c388e1c6d7ec5dbafbffe5808873c1747fec",
+        "rev": "23fd32b40492d5ff8af54fee0d9b000c56a3e69c",
         "type": "github"
       },
       "original": {
@@ -218,11 +218,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1747828732,
-        "narHash": "sha256-j1ahpexl1vMOpCTugcUcwBWhyMS513RpOYgHFJXNCE4=",
+        "lastModified": 1748033367,
+        "narHash": "sha256-5jVC0PrYd8ofQR36Un2f9iXLRmanlf422F46zCuOc9g=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "fb2438fe9647ab33a2cfff62c9b02ac00c7db915",
+        "rev": "0edf4b99290ca0e33810cf64a82dc8d060a5816a",
         "type": "github"
       },
       "original": {
@@ -262,11 +262,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747752302,
-        "narHash": "sha256-XqNAcEFfe5tJZGlx+Su0G67ZwRwZmHNWwiMK0fji0Hw=",
+        "lastModified": 1748007350,
+        "narHash": "sha256-62wguZpolRuj4OtPsC0xrse+EpvXwNmrSB0hPhV7Y7Y=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "74ecd01d2c122f8a4a48066ab1d48f3e01671671",
+        "rev": "146e370d17b0f7fe2bfc6b8610a56d010967469a",
         "type": "github"
       },
       "original": {
@@ -308,11 +308,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747792810,
-        "narHash": "sha256-manhegvHyeFIEI9+IMp0L/OxeDvk1O2qdb+KjMnkM78=",
+        "lastModified": 1747965670,
+        "narHash": "sha256-O91kjsTL7xccgTQr2KITmGhhLTpX9zh+oRvvV8ScOrg=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "fb28e3221f0c052e94d956f44bbbc88ff4a8bbec",
+        "rev": "d3099346fa5e9e33d0989a4e6afc3e8dedd25311",
         "type": "github"
       },
       "original": {
@@ -409,11 +409,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1747610100,
-        "narHash": "sha256-rpR5ZPMkWzcnCcYYo3lScqfuzEw5Uyfh+R0EKZfroAc=",
+        "lastModified": 1747953325,
+        "narHash": "sha256-y2ZtlIlNTuVJUZCqzZAhIw5rrKP4DOSklev6c8PyCkQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ca49c4304acf0973078db0a9d200fd2bae75676d",
+        "rev": "55d1f923c480dadce40f5231feb472e81b0bab48",
         "type": "github"
       },
       "original": {
@@ -432,11 +432,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1747824892,
-        "narHash": "sha256-5lYnHfkCsdt75BS2qYNLlDrF5vM6eTTNveqMq564mwU=",
+        "lastModified": 1748033358,
+        "narHash": "sha256-h8D9m+ReAN4VY9sqQscmeenUKdyLETKS2/SPYPPDTXc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2a41603d663c0065eddaf1dde1e405b31e3c7f8b",
+        "rev": "8c0d345a5e53261bd447e0678c08ee04950305cc",
         "type": "github"
       },
       "original": {
@@ -596,11 +596,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1747797826,
-        "narHash": "sha256-OScRI+92SXECFGiW15erNQCFGJ6MvUQ6Ggmi8GMJ+Co=",
+        "lastModified": 1747970622,
+        "narHash": "sha256-sk5Mv7wy7FxjjqbTHArmrEaK1ZPE72cGj3PmsD4SmQQ=",
         "owner": "DuskSystems",
         "repo": "nix-zed-extensions",
-        "rev": "c4a3682dc89b74cd50aca65c461ee6259b92f26f",
+        "rev": "e474c44bb8f4188dcf3ce85675de9d97fc87f6e5",
         "type": "github"
       },
       "original": {
