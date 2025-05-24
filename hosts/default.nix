@@ -10,8 +10,6 @@
     {
       arch = "aarch64";
       class = "darwin";
-      specialArgs = {
-        inherit pkgsUnstable;
-      };
+      specialArgs = { inherit pkgsUnstable inputs; };
     };
 }

@@ -1,6 +1,9 @@
-{ pkgsUnstable, ... }:
+{ inputs, pkgsUnstable, ... }:
 {
-  imports = [
+  imports = with inputs; [
+    # Enables zed extensions module for Home Manager
+    zed-extensions.homeManagerModules.default
+
     ./extensions.nix
     ./settings.nix
     ./theme.nix
