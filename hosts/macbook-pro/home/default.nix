@@ -14,9 +14,7 @@
 
     extraSpecialArgs = { inherit self pkgsUnstable inputs; };
     sharedModules = with self.inputs; [
-      # Enables patches for home manager installed apps
-      # Turns out this has to be enabled for home manager too
-      mac-app-util.homeManagerModules.default
+      mac-app-util.homeManagerModules.default # Provides fix for HM symlinked apps on macOS, so that Spotlight can find them
     ];
   };
 }
