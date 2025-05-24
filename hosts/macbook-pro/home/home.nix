@@ -4,12 +4,10 @@
     # Catppuccin theme utilities for Nix to simplify installation and customization
     catppuccin.homeModules.catppuccin
 
-    # # Zed extensions managed by Nix
-    # zed-extensions.homeManagerModules.default
-
     ./programs
     ./packages
   ];
+
   home = {
     inherit (self.users.octetstream) username homeDirectory;
 
