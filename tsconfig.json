@@ -6,6 +6,7 @@
     "moduleResolution": "nodenext",
     "moduleDetection": "force",
     "verbatimModuleSyntax": true,
-    "noEmit": true
+    "noEmit": true,
+    "skipLibCheck": true
   }
 }
