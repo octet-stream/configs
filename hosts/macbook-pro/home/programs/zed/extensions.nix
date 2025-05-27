@@ -12,7 +12,6 @@ lib.mkIf config.programs.zed-editor.enable {
       html
       dockerfile
       biome
-      halcyon
       vue
       astro
       graphql
