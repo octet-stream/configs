@@ -12,6 +12,7 @@
     bun
     deno
     rustup
+    docker
     ookla-speedtest
     postgresql
     git-extras
