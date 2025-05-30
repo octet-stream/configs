@@ -1,5 +1,10 @@
-{ config, pkgsUnstable, ... }:
-rec {
+{
+  config,
+  pkgs,
+  pkgsUnstable,
+  ...
+}:
+{
   programs.nh = {
     enable = true;
     package = pkgsUnstable.nh;
@@ -11,6 +16,12 @@ rec {
     };
   };
 
+  home.packages = with pkgs; [
+    nix-output-monitor
+    nvd
+    pkgsUnstable.nh
+  ];
+
   # FIXME: This can be removed once home manager supports nh v4.x
-  home.sessionVariables.NH_FLAKE = programs.nh.flake;
+  home.sessionVariables.NH_FLAKE = config.programs.nh.flake;
 }
