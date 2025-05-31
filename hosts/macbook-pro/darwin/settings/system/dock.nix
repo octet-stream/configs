@@ -1,13 +1,11 @@
-{ self, ... }:
+{ config, ... }:
 let
-  user = self.users.octetstream;
-
   prependAppsPath = builtins.map (name: "/Applications/${name}");
 
   prependSystemAppsPath = builtins.map (name: "/System/Applications/${name}");
 
   preprendHomeManagerAppsPath = builtins.map (
-    name: "${user.homeDirectory}/Applications/Home Manager Apps/${name}"
+    name: "${config.users.users.octetstream.home}/Applications/Home Manager Apps/${name}"
   );
 in
 {

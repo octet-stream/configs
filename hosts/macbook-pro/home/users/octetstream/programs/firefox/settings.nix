@@ -1,7 +1,5 @@
-{ self, lib, ... }:
+{ lib, ... }:
 let
-  inherit (self.users.octetstream) username;
-
   topSites = [
     {
       label = "GitHub";
@@ -45,7 +43,7 @@ let
   ];
 in
 {
-  programs.firefox.profiles.${username} = {
+  programs.firefox.profiles.octetstream = {
     id = 0;
     isDefault = true;
     settings = {

@@ -5,12 +5,12 @@
   ...
 }:
 {
+  imports = [ ./users ];
+
   home-manager = {
     backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
-
-    users.${self.users.octetstream.username} = import ./home.nix;
 
     extraSpecialArgs = { inherit self pkgsUnstable inputs; };
     sharedModules = with self.inputs; [

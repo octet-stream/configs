@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ inputs, users, ... }:
 {
   imports = with inputs; [
     # Catppuccin theme utilities for Nix to simplify installation and customization
@@ -8,8 +8,8 @@
     ./packages
   ];
 
-  home = {
-    inherit (self.users.octetstream) username homeDirectory;
+  home = with users.octetstream; {
+    inherit username homeDirectory;
 
     stateVersion = "24.11";
   };
