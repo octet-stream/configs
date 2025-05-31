@@ -3,9 +3,6 @@
   pkgs,
   ...
 }:
-let
-  user = self.users.octetstream;
-in
 {
   imports = [
     ./homebrew
@@ -29,10 +26,6 @@ in
       zed-extensions.overlays.default
     ];
   };
-
-  system.primaryUser = user.username;
-
-  users.users.${user.username}.home = user.homeDirectory;
 
   security.pam.services.sudo_local.touchIdAuth = true;
 }

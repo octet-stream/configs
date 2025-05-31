@@ -92,11 +92,5 @@
         {
           devShells.default = import ./shell.nix { inherit pkgs; };
         };
-
-      flake = {
-        users = {
-          octetstream = import ./users/octetstream.nix;
-        };
-      };
     };
 }
