@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./controlcenter
     ./networking
     ./system
   ];
