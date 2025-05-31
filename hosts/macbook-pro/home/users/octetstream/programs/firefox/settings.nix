@@ -1,6 +1,25 @@
 { lib, ... }:
 let
-  topSites = [
+  abs = x: if x < 0 then 0 - x else x;
+
+  padTopSitesList = amount: builtins.genList (i: { url = "about:blank?${toString (i + 1)}"; }) amount;
+
+  genTopSites =
+    input:
+    let
+      limit = 8 * 4;
+      inputLength = builtins.length input;
+      rows = abs (builtins.ceil (inputLength / 8.0));
+      list = input ++ padTopSitesList (8 * rows - inputLength);
+      enable = (builtins.length list) > 0;
+    in
+    assert lib.assertMsg (inputLength <= limit)
+      "The limit of pinned sites is exceeded. Expected ${toString limit}, but the list has ${toString inputLength} elements";
+    {
+      inherit list enable rows;
+    };
+
+  topSites = genTopSites [
     {
       label = "GitHub";
       url = "https://github.com";
@@ -27,6 +46,11 @@ let
     }
 
     {
+      label = "Twitter / X";
+      url = "https://x.com";
+    }
+
+    {
       label = "Reddit";
       url = "https://reddit.com";
     }
@@ -37,8 +61,28 @@ let
     }
 
     {
+      label = "Docker Hub";
+      url = "https://hub.docker.com";
+    }
+
+    {
+      label = "TypeScript";
+      url = "https://typescriptlang.org";
+    }
+
+    {
       label = "React";
       url = "https://react.dev";
+    }
+
+    {
+      label = "Qwik";
+      url = "https://qwik.dev";
+    }
+
+    {
+      label = "Vue";
+      url = "https://vuejs.org";
     }
   ];
 in
@@ -47,11 +91,17 @@ in
     id = 0;
     isDefault = true;
     settings = {
-      # Disable auto updates, Home Manager will hanlde it
+      # Disable auto updates, to delegate it to Home Manager
       "app.update.auto" = false;
+      "extensions.update.unabled" = false;
 
-      # Auto-enable extensions managed by Nix
+      # Auto-enable extensions managed by Home Manager
       "extensions.autoDisableScopes" = 0;
+
+      # Pinned sites
+      "browser.newtabpage.activity-stream.feeds.topsites" = topSites.enable;
+      "browser.newtabpage.activity-stream.topSitesRows" = topSites.rows;
+      "browser.newtabpage.pinned" = builtins.toJSON topSites.list; # List of pinned tabs
 
       # Disable irritating first-run stuff
       "browser.disableResetPrompt" = true;
@@ -77,16 +127,6 @@ in
         "4gPpjkxgZzXPVtuEoAL9Ig==" # Facebook
         "K00ILysCaEq8+bEqV/3nuw==" # Amazon
       ] (_: 1);
-
-      # Enable topsites so FF will also show pinned shortcuts
-      "browser.newtabpage.activity-stream.feeds.topsites" = true;
-
-      # TODO: support dynamic number of rows
-      # Note: 8 per a row is supported
-      "browser.newtabpage.activity-stream.topSitesRows" = 1;
-
-      # List of pinned tabs
-      "browser.newtabpage.pinned" = builtins.toJSON topSites;
 
       # Disable telemetry
       "app.shield.optoutstudies.enabled" = false;
