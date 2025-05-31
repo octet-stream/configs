@@ -43,7 +43,7 @@ let
   ];
 in
 {
-  programs.firefox.profiles.octetstream = {
+  programs.firefox.profiles.default = {
     id = 0;
     isDefault = true;
     settings = {
