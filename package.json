@@ -16,11 +16,10 @@
     "@commitlint/types": "19.8.1",
     "@types/node": "22.15.29",
     "husky": "9.1.7",
+    "lint-staged": "16.1.0",
     "typescript": "5.8.3"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome"
-    ]
+    "onlyBuiltDependencies": ["@biomejs/biome"]
   }
 }

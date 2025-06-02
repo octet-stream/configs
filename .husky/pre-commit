@@ -1,3 +1,2 @@
-pnpm biome check --write --staged --no-errors-on-unmatched .
-nixfmt **/*.nix
+pnpm lint-staged
 git update-index --again
