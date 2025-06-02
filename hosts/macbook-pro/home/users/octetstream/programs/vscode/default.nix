@@ -4,6 +4,7 @@
 {
   imports = [
     ./extensions.nix
+    ./keybindings.nix
     ./settings.nix
     ./theme.nix
   ];
