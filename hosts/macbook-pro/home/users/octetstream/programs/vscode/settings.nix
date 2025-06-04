@@ -11,6 +11,7 @@
     "editor.tabSize" = 2;
     "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
     "editor.stickyScroll.enabled" = false;
+    "editor.linkedEditing" = true;
 
     # Workbench settings
     "workbench.startupEditor" = "none";
