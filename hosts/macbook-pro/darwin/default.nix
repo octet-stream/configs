@@ -24,6 +24,9 @@
       nix4vscode.overlays.forVscode
       nur.overlays.default
       zed-extensions.overlays.default
+
+      # FIXME: Remove this once https://github.com/cachix/devenv/issues/1957 is resolved
+      devenv.overlays.default
     ];
   };
 
