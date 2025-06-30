@@ -17,10 +17,10 @@
     postgresql
     git-extras
     nginx-language-server
-    devenv
 
     # Unstable branch
     pkgsUnstable.pulumi-bin
+    pkgsUnstable.devenv
 
     # vlc package does not seeem to support macOS, but there's vlc-bin, which is macOS only -_-
     (if pkgs.stdenv.isDarwin then vlc-bin else vlc)

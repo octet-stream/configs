@@ -76,9 +76,6 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # FIXME: Remove this once https://github.com/cachix/devenv/issues/1957 is resolved
-    devenv.url = "github:cachix/devenv";
   };
 
   outputs =
