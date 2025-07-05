@@ -1,6 +1,6 @@
 { config, lib, ... }:
 lib.mkIf config.programs.vscode.enable {
-  catppuccin.vscode = {
+  catppuccin.vscode.profiles.default = {
     enable = true;
 
     accent = "blue";
