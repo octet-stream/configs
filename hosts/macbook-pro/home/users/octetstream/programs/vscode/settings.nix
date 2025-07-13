@@ -47,6 +47,8 @@
     # Disable copilot
     "chat.commandCenter.enabled" = false;
     "chat.agent.enabled" = false;
+    "workbench.editor.empty.hint" = false;
+    "terminal.integrated.initialHint" = false;
 
     # Disable redhat telemetry (in their yaml extension)
     "redhat.telemetry.enabled" = false;
