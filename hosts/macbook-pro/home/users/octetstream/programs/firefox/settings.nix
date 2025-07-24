@@ -1,91 +1,4 @@
 { lib, ... }:
-let
-  abs = x: if x < 0 then 0 - x else x;
-
-  padTopSitesList = amount: builtins.genList (i: { url = "about:blank?${toString (i + 1)}"; }) amount;
-
-  genTopSites =
-    input:
-    let
-      limit = 8 * 4;
-      inputLength = builtins.length input;
-      rows = abs (builtins.ceil (inputLength / 8.0));
-      list = input ++ padTopSitesList (8 * rows - inputLength);
-      enable = (builtins.length list) > 0;
-    in
-    assert lib.assertMsg (inputLength <= limit)
-      "The limit of pinned sites is exceeded. Expected ${toString limit}, but the list has ${toString inputLength} elements";
-    {
-      inherit list enable rows;
-    };
-
-  topSites = genTopSites [
-    {
-      label = "GitHub";
-      url = "https://github.com";
-    }
-
-    {
-      label = "YouTube";
-      url = "https://youtube.com";
-    }
-
-    {
-      label = "Derpibooru";
-      url = "https://derpibooru.org";
-    }
-
-    {
-      label = "Furbooru";
-      url = "https://furbooru.org";
-    }
-
-    {
-      label = "Bluesky";
-      url = "https://bsky.app";
-    }
-
-    {
-      label = "Twitter / X";
-      url = "https://x.com";
-    }
-
-    {
-      label = "Reddit";
-      url = "https://reddit.com";
-    }
-
-    {
-      label = "Noogle (nix api search)";
-      url = "https://noogle.dev";
-    }
-
-    {
-      label = "Docker Hub";
-      url = "https://hub.docker.com";
-    }
-
-    {
-      label = "TypeScript";
-      url = "https://typescriptlang.org";
-    }
-
-    {
-      label = "React";
-      url = "https://react.dev";
-    }
-
-    {
-      label = "Qwik";
-      url = "https://qwik.dev";
-    }
-
-    {
-      label = "Vue";
-      url = "https://vuejs.org";
-    }
-  ];
-in
 {
   programs.firefox.profiles.default = {
     id = 0;
@@ -97,11 +10,6 @@ in
 
       # Auto-enable extensions managed by Home Manager
       "extensions.autoDisableScopes" = 0;
-
-      # Pinned sites
-      "browser.newtabpage.activity-stream.feeds.topsites" = topSites.enable;
-      "browser.newtabpage.activity-stream.topSitesRows" = topSites.rows;
-      "browser.newtabpage.pinned" = builtins.toJSON topSites.list; # List of pinned tabs
 
       # Disable irritating first-run stuff
       "browser.disableResetPrompt" = true;
