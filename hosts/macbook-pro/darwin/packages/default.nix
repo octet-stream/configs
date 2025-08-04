@@ -11,5 +11,6 @@
     nixd # LSP for Nix
     nixfmt-rfc-style
     nix-init
+    nurl
   ];
 }
