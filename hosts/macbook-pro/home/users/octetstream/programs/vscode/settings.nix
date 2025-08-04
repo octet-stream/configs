@@ -44,11 +44,12 @@
 
     "window.commandCenter" = false; # Disables command center panel on the top
 
-    # Disable copilot
+    # Disable Microsoft's so-called-AI slop
     "chat.commandCenter.enabled" = false;
     "chat.agent.enabled" = false;
-    "workbench.editor.empty.hint" = false;
+    "workbench.editor.empty.hint" = "hidden";
     "terminal.integrated.initialHint" = false;
+    "telemetry.feedback.enabled" = false;
 
     # Disable redhat telemetry (in their yaml extension)
     "redhat.telemetry.enabled" = false;
