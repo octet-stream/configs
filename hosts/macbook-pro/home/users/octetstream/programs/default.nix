@@ -7,6 +7,7 @@
     ./fd
     ./firefox
     ./ghostty
+    ./git
     ./nh
     ./starship
     ./vscode

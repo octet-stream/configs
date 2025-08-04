@@ -8,6 +8,7 @@
   programs.git = {
     extraConfig = {
       core.editor = "code -wr";
+      init.defaultBranch = "main";
     };
   };
 }
