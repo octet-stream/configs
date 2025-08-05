@@ -5,6 +5,7 @@
     zed-extensions.homeManagerModules.default
 
     ./extensions.nix
+    ./keybindings.nix
     ./settings.nix
     ./theme.nix
   ];
