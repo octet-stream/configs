@@ -24,7 +24,7 @@
 
     # Homebrew package
     homebrew = {
-      url = "github:Homebrew/brew/4.6.0"; # I'll have to bump the version by myself, because auto-updates are disabled
+      url = "github:Homebrew/brew/4.6.3"; # I'll have to bump the version by myself, because auto-updates are disabled
       flake = false;
     };
 
@@ -63,7 +63,7 @@
     # Also VSCode extensions, with more individual approach
     # I'll move to this one at some point
     nix4vscode = {
-      url = "github:nix-community/nix4vscode/a39361da946a2710136be7fcda249908ba06dcb1";
+      url = "github:nix-community/nix4vscode";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

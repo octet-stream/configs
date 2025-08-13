@@ -19,8 +19,6 @@
       editorconfig.editorconfig
       firefox-devtools.vscode-firefox-debug
       github.vscode-github-actions
-      graphql.vscode-graphql
-      graphql.vscode-graphql-syntax
       jnoortheen.nix-ide
       mkhl.direnv
       ms-vscode.sublime-keybindings
@@ -41,5 +39,7 @@
       "redhat.vscode-yaml"
       "waderyan.gitblame"
       "catppuccin.catppuccin-vsc-icons"
+      "graphql.vscode-graphql"
+      "graphql.vscode-graphql-syntax"
     ];
 }
