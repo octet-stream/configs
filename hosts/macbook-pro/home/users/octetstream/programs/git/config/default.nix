@@ -1,5 +1,5 @@
-{ config, lib, ... }:
-lib.mkIf config.programs.git.enable {
+{ ... }:
+{
   imports = [
     ./aliases.nix
     ./signing.nix
