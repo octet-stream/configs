@@ -10,6 +10,8 @@
 {
   programs.ghostty.settings = {
     auto-update = "off";
+    working-directory = "home";
+    window-inherit-working-directory = false;
 
     # Window size
     window-width = 90;
