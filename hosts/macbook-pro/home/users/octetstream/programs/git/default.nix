@@ -2,5 +2,5 @@
 {
   imports = [ ./config ];
 
-  programs.git.enable = false;
+  programs.git.enable = true;
 }
