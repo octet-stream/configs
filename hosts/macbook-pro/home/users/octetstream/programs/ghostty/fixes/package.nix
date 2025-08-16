@@ -3,9 +3,10 @@
 {
   config,
   pkgs,
+  pkgsUnstable,
   lib,
   ...
 }:
 lib.mkIf (config.programs.ghostty.enable && pkgs.stdenv.isDarwin) {
-  programs.ghostty.package = pkgs.nur.repos.DimitarNestorov.ghostty;
+  programs.ghostty.package = pkgsUnstable.ghostty-bin;
 }
