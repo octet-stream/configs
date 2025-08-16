@@ -1,17 +1,13 @@
 { config, ... }:
-let
-  publicKeyPath = "${config.home.homeDirectory}/.ssh/id_gh_k.pub";
-  userEmail = "nick.kruchinin@gmail.com";
-in
 {
   programs.git = {
     userName = "Nick K.";
-    userEmail = userEmail;
+    userEmail = "nick.kruchinin@gmail.com";
 
     signing = {
       format = "ssh";
       signByDefault = true;
-      key = publicKeyPath;
+      key = "${config.home.homeDirectory}/.ssh/id_gh_k.pub";
     };
   };
 }
