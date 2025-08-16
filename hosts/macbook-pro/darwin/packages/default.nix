@@ -4,7 +4,6 @@
 {
   environment.systemPackages = with pkgs; [
     # essentials
-    git # TODO: Move Git setup and configuration to Home Manager
     htop # TODO: Move this to Home Manager
 
     # nix-related stuff
