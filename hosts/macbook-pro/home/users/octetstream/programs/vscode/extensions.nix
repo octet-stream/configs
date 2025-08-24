@@ -24,7 +24,6 @@
       ms-vscode.sublime-keybindings
       orta.vscode-twoslash-queries
       pinage404.nix-extension-pack
-      sdras.night-owl
       styled-components.vscode-styled-components
       unifiedjs.vscode-mdx
       vue.volar
