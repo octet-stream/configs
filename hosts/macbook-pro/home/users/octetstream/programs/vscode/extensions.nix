@@ -41,5 +41,6 @@
       "catppuccin.catppuccin-vsc-icons"
       "graphql.vscode-graphql"
       "graphql.vscode-graphql-syntax"
+      "oxc.oxc-vscode"
     ];
 }
