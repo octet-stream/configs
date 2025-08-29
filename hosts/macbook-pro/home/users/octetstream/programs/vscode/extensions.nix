@@ -20,7 +20,6 @@
       firefox-devtools.vscode-firefox-debug
       github.vscode-github-actions
       jnoortheen.nix-ide
-      mkhl.direnv
       ms-vscode.sublime-keybindings
       orta.vscode-twoslash-queries
       pinage404.nix-extension-pack
