@@ -1,4 +1,10 @@
-{ inputs, pkgsUnstable, ... }:
+{
+  config,
+  inputs,
+  pkgsUnstable,
+  lib,
+  ...
+}:
 {
   imports = with inputs; [
     # Enables zed extensions module for Home Manager
@@ -13,5 +19,9 @@
   programs.zed-editor = {
     enable = true;
     package = pkgsUnstable.zed-editor;
+  };
+
+  home.shellAliases = lib.mkIf config.programs.zed-editor.enable {
+    zed = "zeditor";
   };
 }
