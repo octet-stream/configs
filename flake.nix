@@ -43,6 +43,11 @@
       flake = false;
     };
 
+    homebrew-stripe-cli = {
+      url = "github:stripe/homebrew-stripe-cli";
+      flake = false;
+    };
+
     # List of default supported systems
     systems.url = "github:nix-systems/default";
 

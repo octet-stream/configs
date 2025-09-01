@@ -1,6 +1,5 @@
 # Mac AppStore apps managed by MAS
 
-{ ... }:
 {
   homebrew.masApps = {
     Telegram = 747648890;

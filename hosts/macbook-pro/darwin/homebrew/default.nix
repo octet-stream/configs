@@ -1,10 +1,13 @@
 { config, ... }:
 {
   imports = [
+    ./fixes
+
     ./brews.nix
     ./casks.nix
     ./installer.nix
     ./mas.nix
+    ./taps.nix
   ];
 
   homebrew = {
