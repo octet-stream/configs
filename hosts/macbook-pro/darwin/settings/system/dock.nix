@@ -32,6 +32,8 @@ in
         "Zed.app"
       ]
 
+      ++ prependAppsPath [ "Linear.app" ]
+
       ++ prependSystemAppsPath [
         "Music.app"
         "Photos.app"
