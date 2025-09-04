@@ -40,5 +40,7 @@
       "graphql.vscode-graphql"
       "graphql.vscode-graphql-syntax"
       "oxc.oxc-vscode"
+      "zenstack.zenstack"
+      "prisma.prisma"
     ];
 }
