@@ -9,6 +9,7 @@
     extraConfig = {
       core.editor = "code -wr";
       init.defaultBranch = "main";
+      pull.rebase = true;
     };
   };
 }
