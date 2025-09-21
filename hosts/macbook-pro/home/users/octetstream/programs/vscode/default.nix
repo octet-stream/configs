@@ -1,6 +1,5 @@
 # VSCode setup managed by nix and home manager
 
-{ ... }:
 {
   imports = [
     ./extensions.nix

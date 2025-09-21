@@ -1,4 +1,3 @@
-{ ... }:
 {
   imports = [
     ./oh-my-zsh.nix

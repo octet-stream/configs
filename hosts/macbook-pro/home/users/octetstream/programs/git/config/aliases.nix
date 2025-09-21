@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.git.aliases = {
     sw = "switch";

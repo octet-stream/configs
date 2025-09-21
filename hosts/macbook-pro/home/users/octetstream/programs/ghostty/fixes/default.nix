@@ -1,4 +1,3 @@
-{ ... }:
 {
   imports = [
     ./package.nix

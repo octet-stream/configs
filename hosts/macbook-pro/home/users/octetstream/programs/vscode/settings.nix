@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.vscode.profiles.default.userSettings = {
     "window.newWindowDimensions" = "inherit"; # Sets window to preverve the size from the last session

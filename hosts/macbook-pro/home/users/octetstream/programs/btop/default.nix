@@ -1,4 +1,3 @@
-{ ... }:
 {
   imports = [
     ./theme.nix

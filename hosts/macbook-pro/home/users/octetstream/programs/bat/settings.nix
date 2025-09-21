@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.bat.config = { };
 }

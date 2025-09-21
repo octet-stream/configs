@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.starship.settings = {
     add_newline = false; # Disable newline between prompts (because it adds one at the beginning of a new session)

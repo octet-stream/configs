@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.ghostty.settings = {
     keybind = [

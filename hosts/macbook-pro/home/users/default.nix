@@ -1,4 +1,3 @@
-{ ... }:
 let
   mkHomeDirectory =
     { platform, username }: "/${if platform == "darwin" then "Users" else "home"}/${username}";

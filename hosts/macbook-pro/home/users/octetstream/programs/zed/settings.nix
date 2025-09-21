@@ -7,7 +7,6 @@
 # custom settings, run `zed: open default settings` from the
 # command palette (in Zed) cmd-shift-p / ctrl-shift-p
 
-{ ... }:
 {
   programs.zed-editor.userSettings = {
     auto_update = false; # Disable auto updates to let home manager do the job

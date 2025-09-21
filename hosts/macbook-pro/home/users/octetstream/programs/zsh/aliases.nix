@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.zsh.shellAliases = {
     projects = "cd ~/projects";

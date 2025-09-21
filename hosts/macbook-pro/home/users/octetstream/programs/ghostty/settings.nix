@@ -6,7 +6,6 @@
 # ! Note: Remove ~/Library/Application\ Support/com.mitchellh.ghostty/config file if it exists, otherwise it will be loaded and break the whole configuration
 # ! See: https://github.com/ghostty-org/ghostty/discussions/5687
 
-{ ... }:
 {
   programs.ghostty.settings = {
     auto-update = "off";

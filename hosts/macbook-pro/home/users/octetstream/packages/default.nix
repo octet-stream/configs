@@ -14,7 +14,6 @@
     rustup
     docker
     ookla-speedtest
-    postgresql
     git-extras
     nginx-language-server
 

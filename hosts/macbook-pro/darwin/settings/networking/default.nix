@@ -1,4 +1,3 @@
-{ ... }:
 {
   networking = {
     computerName = "Nick's Macbook Pro";
