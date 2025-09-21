@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   imports = [
     ./extensions.nix
@@ -7,8 +6,5 @@
     ./search-engines.nix
   ];
 
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox-bin;
-  };
+  programs.firefox.enable = true;
 }
