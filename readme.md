@@ -10,7 +10,7 @@ A home for my workstation configs and setup
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
-If you have any issue, consult [official documentation](https://nixos.org/download/).
+If you have any issue, please refer to [official documentation](https://nixos.org/download/).
 
 2. Install nix-darwin & first system rebuild:
 
