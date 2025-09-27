@@ -20,6 +20,7 @@
 
     # Add overlays for nixpkgs to override some of the packages
     overlays = with self.inputs; [
+      nixpkgs-firefox-darwin.overlay
       nix-vscode-extensions.overlays.default
       nix4vscode.overlays.forVscode
       nur.overlays.default

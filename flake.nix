@@ -81,6 +81,11 @@
       url = "github:catppuccin/nix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-firefox-darwin = {
+      url = "github:bandithedoge/nixpkgs-firefox-darwin";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

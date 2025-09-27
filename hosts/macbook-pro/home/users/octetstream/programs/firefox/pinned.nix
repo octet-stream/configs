@@ -105,6 +105,16 @@ let
 in
 {
   programs.firefox.profiles.default.settings = {
+    # Disable ads and sponsored sites
+    "browser.newtabpage.activity-stream.showSponsored" = false;
+    "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+    "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored" = false;
+    "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+    "browser.newtabpage.blocked" = lib.genAttrs [
+      "4gPpjkxgZzXPVtuEoAL9Ig==" # Facebook
+      "K00ILysCaEq8+bEqV/3nuw==" # Amazon
+    ] (_: 1);
+
     # Pinned sites
     "browser.newtabpage.activity-stream.feeds.topsites" = pinned.enable;
     "browser.newtabpage.activity-stream.topSitesRows" = pinned.rows;

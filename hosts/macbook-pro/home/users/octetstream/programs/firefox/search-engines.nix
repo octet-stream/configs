@@ -37,22 +37,6 @@
           ];
         }
       ];
-
-      youtube = {
-        name = "YouTube";
-        definedAliases = [ "@yt" ];
-        urls = [
-          {
-            template = "https://www.youtube.com/results";
-            arams = [
-              {
-                name = "search_query";
-                value = "{searchTerms}";
-              }
-            ];
-          }
-        ];
-      };
     };
   };
 }
