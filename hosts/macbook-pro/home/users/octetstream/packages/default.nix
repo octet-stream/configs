@@ -5,8 +5,8 @@
   pkgs,
   ...
 }:
-{
-  home.packages = with pkgs; [
+let
+  stablePackages = with pkgs; [
     vim
     fnm
     bun
@@ -16,12 +16,17 @@
     ookla-speedtest
     git-extras
     nginx-language-server
-
-    # Unstable branch
-    pkgsUnstable.pulumi-bin
     devenv
 
     # vlc package does not seeem to support macOS, but there's vlc-bin, which is macOS only -_-
     (if pkgs.stdenv.isDarwin then vlc-bin else vlc)
   ];
+
+  unstablePackages = with pkgsUnstable; [
+    pulumi-bin
+    stripe-cli
+  ];
+in
+{
+  home.packages = stablePackages ++ unstablePackages;
 }

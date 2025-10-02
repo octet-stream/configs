@@ -232,22 +232,6 @@
         "type": "github"
       }
     },
-    "homebrew-stripe-cli": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1759351376,
-        "narHash": "sha256-ulrMa+RCbhQ0SeYNp+oLAfaO5ITwsObIaZl965pB5DE=",
-        "owner": "stripe",
-        "repo": "homebrew-stripe-cli",
-        "rev": "583b1dfe292133f7fc1040e64ebaa531af7934f8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "stripe",
-        "repo": "homebrew-stripe-cli",
-        "type": "github"
-      }
-    },
     "mac-app-util": {
       "inputs": {
         "cl-nix-lite": "cl-nix-lite",
@@ -499,7 +483,6 @@
         "homebrew": "homebrew",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
-        "homebrew-stripe-cli": "homebrew-stripe-cli",
         "mac-app-util": "mac-app-util",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
