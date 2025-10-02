@@ -44,7 +44,7 @@
     };
 
     homebrew-stripe-cli = {
-      url = "github:stripe/homebrew-stripe-cli";
+      url = "github:stripe/homebrew-stripe-cli?tag=1.30.0"; # ! 1.31.0 is broken
       flake = false;
     };
 
