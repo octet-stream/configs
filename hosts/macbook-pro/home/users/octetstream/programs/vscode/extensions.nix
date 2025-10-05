@@ -10,7 +10,6 @@
     ++ [
       aaron-bond.better-comments
       ahmadalli.vscode-nginx-conf
-      arrterian.nix-env-selector
       astro-build.astro-vscode
       bierner.lit-html
       biomejs.biome
@@ -22,7 +21,6 @@
       jnoortheen.nix-ide
       ms-vscode.sublime-keybindings
       orta.vscode-twoslash-queries
-      pinage404.nix-extension-pack
       styled-components.vscode-styled-components
       unifiedjs.vscode-mdx
       vue.volar
