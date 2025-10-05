@@ -52,5 +52,8 @@
 
     # Disable redhat telemetry (in their yaml extension)
     "redhat.telemetry.enabled" = false;
+
+    # Enable oxc only if config detected
+    "oxc.requireConfig" = true;
   };
 }
