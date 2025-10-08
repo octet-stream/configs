@@ -17,6 +17,8 @@ let
     git-extras
     nginx-language-server
     devenv
+    infisical
+    nodePackages.vercel
 
     # vlc package does not seeem to support macOS, but there's vlc-bin, which is macOS only -_-
     (if pkgs.stdenv.isDarwin then vlc-bin else vlc)
