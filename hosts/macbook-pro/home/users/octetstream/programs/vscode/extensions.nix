@@ -13,7 +13,7 @@
       astro-build.astro-vscode
       bierner.lit-html
       biomejs.biome
-      bradlc.vscode-tailwindcss
+      # bradlc.vscode-tailwindcss
       dbaeumer.vscode-eslint
       editorconfig.editorconfig
       firefox-devtools.vscode-firefox-debug
@@ -40,5 +40,6 @@
       "oxc.oxc-vscode"
       "zenstack.zenstack"
       "prisma.prisma"
+      "bradlc.vscode-tailwindcss"
     ];
 }
