@@ -21,6 +21,7 @@
     # DB Clients
     "db-browser-for-sqlite" # SQLite
     "sequel-ace" # MySQL and MariaDB
+    "beekeeper-studio" # Multi-targeted SQL GUI client
 
     # Others
     "lulu" # Firewall
