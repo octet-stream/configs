@@ -7,6 +7,8 @@
 
       "privacy.trackingprotection.enabled" = true; # Enable tracking protection
       "dom.security.https_only_mode" = true; # Enforce https by default
+      "signon.rememberSignons" = false;
+      "identity.fxaccounts.enabled" = false;
 
       # Telemetry settings
       "app.shield.optoutstudies.enabled" = false;
