@@ -17,6 +17,7 @@ lib.mkIf config.programs.zed-editor.enable {
       graphql
       svelte
       nginx
+      oxc
     ];
   };
 }
