@@ -18,6 +18,7 @@ lib.mkIf config.programs.zed-editor.enable {
       svelte
       nginx
       oxc
+      prisma
     ];
   };
 }
