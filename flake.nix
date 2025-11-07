@@ -46,14 +46,18 @@
     # List of default supported systems
     systems.url = "github:nix-systems/default";
 
-    # ! Commented out because of: https://github.com/hraban/mac-app-util/issues/39
     # Fix for apps symlinks managed by Nix on macOS
-    # mac-app-util = {
-    #   url = "github:hraban/mac-app-util";
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
 
-    #   # This flake pins specific revision of the nixpkgs, but current stable channel seem to have requested dependencies, to I think it safe to override this one
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+      # This flake pins specific revision of the nixpkgs, but current stable channel seem to have requested dependencies, to I think it safe to override this one
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+
+        # ! Overriden as termporarily workaround as suggested here: https://github.com/hraban/mac-app-util/issues/39#issuecomment-3503946041
+        cl-nix-lite.url = "github:r4v3n6101/cl-nix-lite/6deefd29913ad23b73db8f1ade0a397e1518619f";
+      };
+    };
 
     # VSCode extensions
     nix-vscode-extensions = {
