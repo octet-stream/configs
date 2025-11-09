@@ -16,6 +16,9 @@ let
     ookla-speedtest
     git-extras
     nginx-language-server
+    yt-dlp
+
+    # For work
     infisical
     nodePackages.vercel
 
