@@ -16,7 +16,6 @@ let
     ookla-speedtest
     git-extras
     nginx-language-server
-    devenv
     infisical
     nodePackages.vercel
 
@@ -27,6 +26,7 @@ let
   unstablePackages = with pkgsUnstable; [
     pulumi-bin
     stripe-cli
+    devenv # ! Wait until the release and move devenv back to stable channel: https://github.com/NixOS/nixpkgs/pull/459771
   ];
 in
 {
