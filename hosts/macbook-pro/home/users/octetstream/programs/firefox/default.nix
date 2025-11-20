@@ -5,6 +5,7 @@
     ./extensions.nix
     ./pinned.nix
     ./settings.nix
+    ./policies.nix
     ./search-engines.nix
   ];
 
