@@ -186,11 +186,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1763493160,
-        "narHash": "sha256-bYqOYMH5nLC7vo0EQpBgtIfrCNGyvGZZ7hB9h6BEoak=",
+        "lastModified": 1763617223,
+        "narHash": "sha256-0tVjjuV7jcHkwVlzqKG6xOCtaZ7A6LqZDM10Sc1Urmk=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "4d6a7cf9acab604512ff56cf120b11a6a55e0d5e",
+        "rev": "bdaa8404957c08795434ad0c3b98e3902f0f25cd",
         "type": "github"
       },
       "original": {
@@ -202,11 +202,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1763490787,
-        "narHash": "sha256-EIF3jkmLHOFpDJ78l5NbF1d3w+85AcvCmerumvpoOCM=",
+        "lastModified": 1763626660,
+        "narHash": "sha256-byFFIOo+AWwn8NwV2LIgq4X6cjAVSx7oWh3F62jrjN0=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "e2583cb3ef22e8ee73b4054c7c11611da4ffe6b7",
+        "rev": "3af77c838b1eb11f4f6bc50411ca24f9b87583c4",
         "type": "github"
       },
       "original": {
@@ -286,11 +286,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763430920,
-        "narHash": "sha256-4RCKEWs9vVaRvNRn2VS0NI9RsUfc1pu16aOQeujS/XA=",
+        "lastModified": 1763603708,
+        "narHash": "sha256-tAriDFienBLi6QzdZO3hSw1R+MaDdg78yPzkgXvOwEo=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "c653a0ab06ba1b34121368e94982ea8963a15343",
+        "rev": "21fb2a4737c9eeecc8722fc66df913860fa1a028",
         "type": "github"
       },
       "original": {
@@ -307,11 +307,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1763432149,
-        "narHash": "sha256-UrGx5YLWXRPyyiTfm8DgbI7ywQWdH7Ezxciy/xPcf0s=",
+        "lastModified": 1763604084,
+        "narHash": "sha256-PNcP4qUOAi1/p7Voab38NJcn2jmM8gQNJZbn9vSBnO0=",
         "owner": "nix-community",
         "repo": "nix4vscode",
-        "rev": "186104fdeb872509fe8fe0821f6260f41872498b",
+        "rev": "e4176772efe39ddf77a62fa3e7caea664fcf41b5",
         "type": "github"
       },
       "original": {
@@ -343,11 +343,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763427911,
-        "narHash": "sha256-ZU01lYJOO5JisPzEXrudDw1IP0Ot4n4Me0KIyAQJnME=",
+        "lastModified": 1763600630,
+        "narHash": "sha256-D7htRZIDs6kvUV8wJyUhN8ClJyN4Qd+yUKcjr4Y81+M=",
         "owner": "bandithedoge",
         "repo": "nixpkgs-firefox-darwin",
-        "rev": "d0dcf5d9814e259cab6f26304460acf00f1079ba",
+        "rev": "2810c834c81c520728bca730cd390f2fadcf0b6b",
         "type": "github"
       },
       "original": {
@@ -373,11 +373,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1763283776,
-        "narHash": "sha256-Y7TDFPK4GlqrKrivOcsHG8xSGqQx3A6c+i7novT85Uk=",
+        "lastModified": 1763421233,
+        "narHash": "sha256-Stk9ZYRkGrnnpyJ4eqt9eQtdFWRRIvMxpNRf4sIegnw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "50a96edd8d0db6cc8db57dab6bb6d6ee1f3dc49a",
+        "rev": "89c2b2330e733d6cdb5eae7b899326930c2c0648",
         "type": "github"
       },
       "original": {
@@ -443,11 +443,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763491115,
-        "narHash": "sha256-hkqK2wmACNZJe6epc3Mb8Ox1Xa5Uxm4K1pYtobCldBI=",
+        "lastModified": 1763624104,
+        "narHash": "sha256-C6HiyPqrNmbCC70OZVbPu6aHcIGgY43rTRByrgg0zN4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2ce54e34a84d097fdd0fca01ce0114239dbaa689",
+        "rev": "739380440306f0f60232cabc9d49fe80bc9e5cff",
         "type": "github"
       },
       "original": {
@@ -569,11 +569,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1763436359,
-        "narHash": "sha256-NA2QxvhmN5SClhG337c24tfgJcUMaK8S6t22gUHLuoQ=",
+        "lastModified": 1763609118,
+        "narHash": "sha256-l7lRMfcf+IJWOrkk9YtioLPA188gfSTqe5oukoFZQuI=",
         "owner": "DuskSystems",
         "repo": "nix-zed-extensions",
-        "rev": "443b56dc54298f15f8420891ddb80c0da00311a8",
+        "rev": "2dbb174bba5a44266d721aa5bac2e6fb8c916f12",
         "type": "github"
       },
       "original": {
