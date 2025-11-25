@@ -215,6 +215,22 @@
         "type": "github"
       }
     },
+    "infisical-cli": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1764038452,
+        "narHash": "sha256-aIIU8qP72aawscZVTy7LiNQn37KDfDr9jRo5WqCSJX8=",
+        "owner": "Infisical",
+        "repo": "homebrew-get-cli",
+        "rev": "74f0e654093fa3e0f0e7af95af9e67b0273dfc61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Infisical",
+        "repo": "homebrew-get-cli",
+        "type": "github"
+      }
+    },
     "mac-app-util": {
       "inputs": {
         "cl-nix-lite": "cl-nix-lite",
@@ -465,6 +481,7 @@
         "homebrew": "homebrew",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "infisical-cli": "infisical-cli",
         "mac-app-util": "mac-app-util",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",

@@ -6,6 +6,7 @@
     taps = with self.inputs; {
       "homebrew/homebrew-core" = homebrew-core;
       "homebrew/homebrew-cask" = homebrew-cask;
+      "infisical/homebrew-get-cli" = infisical-cli;
     };
   };
 }

@@ -43,6 +43,11 @@
       flake = false;
     };
 
+    infisical-cli = {
+      url = "github:Infisical/homebrew-get-cli";
+      flake = false;
+    };
+
     # List of default supported systems
     systems.url = "github:nix-systems/default";
 

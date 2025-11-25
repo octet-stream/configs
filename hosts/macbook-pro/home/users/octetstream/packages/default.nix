@@ -20,7 +20,7 @@ let
     devenv
 
     # For work
-    infisical
+    # infisical
     nodePackages.vercel
 
     # vlc package does not seeem to support macOS, but there's vlc-bin, which is macOS only -_-
