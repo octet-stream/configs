@@ -28,7 +28,7 @@ let
   ];
 
   unstablePackages = with pkgsUnstable; [
-    pulumi-bin
+    pulumi
     stripe-cli
   ];
 in
