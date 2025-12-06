@@ -1,8 +1,10 @@
 { config, ... }:
 {
   programs.git = {
-    userName = "Nick K.";
-    userEmail = "nick.kruchinin@gmail.com";
+    settings.user = {
+      email = "nick.kruchinin@gmail.com";
+      name = "Nick K.";
+    };
 
     signing = {
       format = "ssh";

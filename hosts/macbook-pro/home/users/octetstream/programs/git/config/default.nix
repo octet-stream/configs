@@ -4,11 +4,9 @@
     ./signing.nix
   ];
 
-  programs.git = {
-    extraConfig = {
-      core.editor = "code -wr";
-      init.defaultBranch = "main";
-      pull.rebase = true;
-    };
+  programs.git.settings = {
+    core.editor = "code -wr";
+    init.defaultBranch = "main";
+    pull.rebase = true;
   };
 }
