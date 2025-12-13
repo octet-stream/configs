@@ -1,7 +1,6 @@
 {
   config,
   inputs,
-  pkgsUnstable,
   lib,
   ...
 }:
@@ -16,10 +15,7 @@
     ./theme.nix
   ];
 
-  programs.zed-editor = {
-    enable = true;
-    package = pkgsUnstable.zed-editor;
-  };
+  programs.zed-editor.enable = true;
 
   home.shellAliases = lib.mkIf config.programs.zed-editor.enable {
     zed = "zeditor";
