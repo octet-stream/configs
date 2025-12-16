@@ -9,7 +9,6 @@ lib.mkIf config.programs.zed-editor.enable {
     enable = true;
     packages = with pkgs.zed-extensions; [
       nix
-      html
       dockerfile
       biome
       vue
