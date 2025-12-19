@@ -3,7 +3,7 @@
 { pkgs, ... }:
 let
   # Extensions from nix-vscode-extensions overlay
-  defaultSource = with pkgs.vscode-marketplace; [
+  defaultSource = with pkgs.vscode-marketplace-release; [
     aaron-bond.better-comments
     ahmadalli.vscode-nginx-conf
     astro-build.astro-vscode
@@ -21,6 +21,7 @@ let
     vue.volar
     yoavbls.pretty-ts-errors
     ms-azuretools.vscode-containers
+    waderyan.gitblame
   ];
 
   # Extensions from nix4vscode
@@ -29,7 +30,6 @@ let
     "tamasfe.even-better-toml"
     "mads-hartmann.bash-ide-vscode"
     "redhat.vscode-yaml"
-    "waderyan.gitblame"
     "catppuccin.catppuccin-vsc-icons"
     "graphql.vscode-graphql"
     "graphql.vscode-graphql-syntax"
