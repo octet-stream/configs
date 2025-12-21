@@ -67,14 +67,18 @@
     # VSCode extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
+
+      # ! Switch back to stable channel once this backported: https://github.com/NixOS/nixpkgs/pull/464215
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # Also VSCode extensions, with more individual approach
     # I'll move to this one at some point
     nix4vscode = {
       url = "github:nix-community/nix4vscode";
-      inputs.nixpkgs.follows = "nixpkgs";
+
+      # ! Switch back to stable channel once this backported: https://github.com/NixOS/nixpkgs/pull/464215
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     zed-extensions = {

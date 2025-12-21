@@ -3,7 +3,7 @@
 { pkgs, ... }:
 let
   # Extensions from nix-vscode-extensions overlay
-  defaultSource = with pkgs.vscode-marketplace-release; [
+  vscMarketplaceSource = with pkgs.vscode-marketplace-release; [
     aaron-bond.better-comments
     ahmadalli.vscode-nginx-conf
     astro-build.astro-vscode
@@ -22,17 +22,17 @@ let
     yoavbls.pretty-ts-errors
     ms-azuretools.vscode-containers
     waderyan.gitblame
+    graphql.vscode-graphql
+    graphql.vscode-graphql-syntax
   ];
 
-  # Extensions from nix4vscode
-  backupSource = pkgs.nix4vscode.forVscode [
+  # Extensions from nix4vscode overlay
+  nix4VSCodeSource = pkgs.nix4vscode.forVscode [
     "ms-vscode-remote.remote-containers"
     "tamasfe.even-better-toml"
     "mads-hartmann.bash-ide-vscode"
     "redhat.vscode-yaml"
     "catppuccin.catppuccin-vsc-icons"
-    "graphql.vscode-graphql"
-    "graphql.vscode-graphql-syntax"
     "oxc.oxc-vscode"
     "zenstack.zenstack"
     "prisma.prisma"
@@ -54,7 +54,7 @@ in
       enableExtensionUpdateCheck = false;
       userSettings."extensions.autoUpdate" = false;
 
-      extensions = defaultSource ++ backupSource;
+      extensions = vscMarketplaceSource ++ nix4VSCodeSource;
     };
   };
 }
