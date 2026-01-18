@@ -10,10 +10,7 @@
     ./settings
   ];
 
-  nix = {
-    package = pkgs.nixVersions.latest; # Keep nix version in sync with specified package (for auto-updates)
-    settings.experimental-features = "nix-command flakes"; # Enable flakes and nix command
-  };
+  nix.settings.experimental-features = "nix-command flakes"; # Enable flakes and nix command;
 
   nixpkgs = {
     config.allowUnfree = true;

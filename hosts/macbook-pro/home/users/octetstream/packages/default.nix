@@ -16,8 +16,6 @@ let
     ookla-speedtest
     git-extras
     nginx-language-server
-    yt-dlp
-    devenv
 
     # For work
     # infisical
@@ -30,6 +28,7 @@ let
   unstablePackages = with pkgsUnstable; [
     pulumi
     stripe-cli
+    devenv
   ];
 in
 {
