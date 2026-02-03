@@ -18,6 +18,17 @@ lib.mkIf config.programs.zed-editor.enable {
       nginx
       oxc
       prisma
+      zig
+      emmet
+      make
+      sql
+      ruby
+      dart
+      log
+      scss
+      proto
+      caddyfile
+      tsgo
     ];
   };
 }
