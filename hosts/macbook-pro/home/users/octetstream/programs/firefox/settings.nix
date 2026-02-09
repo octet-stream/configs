@@ -6,6 +6,8 @@
     settings = {
       "app.update.auto" = false; # Disable Firefox auto updates
 
+      "browser.ml.enable" = false; # ML (so called "AI") killswitch
+
       # Disable irritating first-run stuff
       "browser.disableResetPrompt" = true;
       "browser.download.panel.shown" = true;
