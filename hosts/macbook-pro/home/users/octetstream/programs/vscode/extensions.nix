@@ -18,7 +18,7 @@ let
     orta.vscode-twoslash-queries
     styled-components.vscode-styled-components
     unifiedjs.vscode-mdx
-    vue.volar
+    vue.volar # <- This one might be broken and cause my VSCode setup break, but I'm not sure
     yoavbls.pretty-ts-errors
     ms-azuretools.vscode-containers
     waderyan.gitblame
