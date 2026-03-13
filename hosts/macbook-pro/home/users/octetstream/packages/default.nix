@@ -16,6 +16,7 @@ let
     ookla-speedtest
     git-extras
     nginx-language-server
+    devenv # ! Broken again in unstable branch
 
     # For work
     # infisical
@@ -28,7 +29,6 @@ let
   unstablePackages = with pkgsUnstable; [
     pulumi
     stripe-cli
-    devenv
   ];
 in
 {
