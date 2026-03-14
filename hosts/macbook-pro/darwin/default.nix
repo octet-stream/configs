@@ -1,5 +1,6 @@
 {
   self,
+  pkgsUnstable,
   ...
 }:
 {
@@ -8,6 +9,10 @@
     ./packages
     ./settings
   ];
+
+  # ! Trying out nix v2.34.x and hope it will fix the problem with "Too many open files" on macOS: https://github.com/NixOS/nix/pull/15205
+  # ! Switch back to stable branch as soon as v2.34.x is available there!
+  nix.package = pkgsUnstable.nixVersions.latest;
 
   nix.settings.experimental-features = "nix-command flakes"; # Enable flakes and nix command;
 
