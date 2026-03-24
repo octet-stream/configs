@@ -37,6 +37,7 @@ let
     "zenstack.zenstack"
     "prisma.prisma"
     "bradlc.vscode-tailwindcss"
+    "qufiwefefwoyn.inline-sql-syntax"
   ];
 in
 {
