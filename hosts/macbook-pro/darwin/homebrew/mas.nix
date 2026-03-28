@@ -9,6 +9,6 @@
     Lungo = 1263070803;
     # Spark = 1176895641;
     "HEIC Converter" = 1294126402;
-    "Color Picker" = 1545870783;
+    # "Happ - Proxy Utility Plus" = 6746188973;
   };
 }
