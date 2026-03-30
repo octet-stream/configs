@@ -10,7 +10,7 @@
     "prepare": "npx --yes is-in-ci || husky"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.7",
+    "@biomejs/biome": "2.4.10",
     "@commitlint/cli": "20.4.4",
     "@commitlint/config-conventional": "20.4.4",
     "@commitlint/types": "20.4.4",
