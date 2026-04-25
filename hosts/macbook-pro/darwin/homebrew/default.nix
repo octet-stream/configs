@@ -6,7 +6,7 @@
     ./brews.nix
     ./casks.nix
     ./installer.nix
-    ./mas.nix
+    # ./mas.nix
     ./taps.nix
   ];
 

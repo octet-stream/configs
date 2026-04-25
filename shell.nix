@@ -9,4 +9,8 @@ mkShell {
     nodejs_24
     corepack_24
   ];
+
+  shellHook = ''
+    ${corepack_24}/bin/pnpm i --frozen-lockfile
+  '';
 }
