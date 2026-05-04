@@ -38,6 +38,8 @@ let
     "prisma.prisma"
     "bradlc.vscode-tailwindcss"
     "qufiwefefwoyn.inline-sql-syntax"
+    "mtxr.sqltools"
+    "mtxr.sqltools-driver-sqlite"
   ];
 in
 {
