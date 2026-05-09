@@ -29,6 +29,7 @@ let
     pulumi
     stripe-cli
     devenv
+    dbeaver-bin
   ];
 in
 {
