@@ -11,6 +11,7 @@
     "orbstack" # Docker Desktop alternative
     "container" # Apple's docker-like containerization
     "linear-linear" # Projects management tool
+    "notion" # App to write, plan, collaborate, and get organised
 
     # Gaming
     "openemu" # Retro consoles emulator
