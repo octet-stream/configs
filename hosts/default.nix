@@ -5,7 +5,10 @@
   easy-hosts.hosts.macbook-pro =
     let
       system = "aarch64-darwin";
-      pkgsUnstable = import inputs.nixpkgs-unstable { inherit system; };
+      pkgsUnstable = import inputs.nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       arch = "aarch64";

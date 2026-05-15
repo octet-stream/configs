@@ -10,7 +10,7 @@
     # Dev tools
     "orbstack" # Docker Desktop alternative
     "container" # Apple's docker-like containerization
-    "linear-linear" # Projects management tool
+    "linear" # Projects management tool
     "notion" # App to write, plan, collaborate, and get organised
 
     # Gaming
@@ -31,10 +31,12 @@
     "appcleaner" # Uninstallation utility
     "discord" # Messenger
     "hot" # Temperature Sensors
-    "inkscape" # SVG editor
     "qbittorrent" # BitTorrent client
     "desktoppr" # Sets wallpapers via command line
     "keyboardcleantool" # Blocks all keyboard input when opened
     "postman"
+
+    # Broken
+    # "inkscape" # SVG editor
   ];
 }
