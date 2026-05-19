@@ -34,6 +34,7 @@ let
     # "AI" slop for work (sometimes)
     codex
     codex-acp
+    gh
   ];
 in
 {
