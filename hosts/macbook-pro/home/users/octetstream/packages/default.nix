@@ -30,6 +30,10 @@ let
     stripe-cli
     devenv
     dbeaver-bin
+
+    # "AI" slop for work (sometimes)
+    codex
+    codex-acp
   ];
 in
 {
