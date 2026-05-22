@@ -21,7 +21,6 @@ in
       ++ preprendHomeManagerAppsPath [ "Firefox.app" ]
 
       ++ prependAppsPath [
-        "Google Chrome.app"
         "Spark.app"
         "Telegram.app"
         "Discord.app"
