@@ -241,11 +241,11 @@
     "infisical-cli": {
       "flake": false,
       "locked": {
-        "lastModified": 1779460410,
-        "narHash": "sha256-ZsJb7FEJJZaqnCM21tUyAMkyPyik8LBsnzI/GaDj0Pw=",
+        "lastModified": 1780091234,
+        "narHash": "sha256-t331OPzHYV06zWYdW6PG79p1576KsgD3qIDAy++EfzA=",
         "owner": "Infisical",
         "repo": "homebrew-get-cli",
-        "rev": "a1dab0bfe3470efee0b73619e280145121b09854",
+        "rev": "c4f862e1a0f50b33323e0be100833ecfdca7276a",
         "type": "github"
       },
       "original": {
