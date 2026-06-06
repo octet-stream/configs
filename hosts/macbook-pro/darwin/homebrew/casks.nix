@@ -17,7 +17,7 @@
     "openemu" # Retro consoles emulator
 
     # Video players
-    "iina"
+    # "iina" # -> moved to nixpkgs
 
     # DB Clients
     "db-browser-for-sqlite" # SQLite

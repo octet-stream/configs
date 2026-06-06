@@ -16,6 +16,7 @@ let
     ookla-speedtest
     git-extras
     nginx-language-server
+    iina
 
     # For work
     # infisical
