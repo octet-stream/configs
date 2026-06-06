@@ -12,7 +12,7 @@ let
     bun
     deno
     rustup
-    docker
+    docker_29
     ookla-speedtest
     git-extras
     nginx-language-server

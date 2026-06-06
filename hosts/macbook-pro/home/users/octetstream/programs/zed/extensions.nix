@@ -22,8 +22,8 @@ lib.mkIf config.programs.zed-editor.enable {
       emmet
       make
       sql
-      ruby
-      dart
+      # ruby
+      # dart
       log
       scss
       proto
