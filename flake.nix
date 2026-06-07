@@ -2,18 +2,18 @@
   description = "My Nix Darwin flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
 
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -51,14 +51,6 @@
     # List of default supported systems
     systems.url = "github:nix-systems/default";
 
-    # Fix for apps symlinks managed by Nix on macOS
-    mac-app-util = {
-      url = "github:hraban/mac-app-util";
-
-      # This flake pins specific revision of the nixpkgs, but current stable channel seem to have requested dependencies, to I think it safe to override this one
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # VSCode extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
@@ -78,7 +70,7 @@
     };
 
     catppuccin = {
-      url = "github:catppuccin/nix/release-25.11";
+      url = "github:catppuccin/nix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

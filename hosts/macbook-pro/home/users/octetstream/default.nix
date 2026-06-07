@@ -15,6 +15,13 @@
   };
 
   programs.home-manager.enable = true; # Allow Home Manager to manage itself;
+  targets.darwin = {
+    linkApps.enable = false;
+    copyApps = {
+      enable = true;
+      enableChecks = true;
+    };
+  };
 
   # Set theme flavor and accent
   catppuccin = {

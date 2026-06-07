@@ -5,7 +5,7 @@ with pkgs;
 mkShell {
   packages = [
     nixd
-    nixfmt-rfc-style
+    nixfmt
     nodejs_24
     corepack_24
   ];

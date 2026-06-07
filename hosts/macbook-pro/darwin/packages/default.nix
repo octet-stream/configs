@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     # nix-related stuff
     nixd # LSP for Nix
-    nixfmt-rfc-style
+    nixfmt
     nix-init
     nurl
   ];

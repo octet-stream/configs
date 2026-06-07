@@ -16,9 +16,6 @@
     # Gaming
     "openemu" # Retro consoles emulator
 
-    # Video players
-    # "iina" # -> moved to nixpkgs
-
     # DB Clients
     "db-browser-for-sqlite" # SQLite
     "sequel-ace" # MySQL and MariaDB
