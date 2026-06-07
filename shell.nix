@@ -6,11 +6,11 @@ mkShell {
   packages = [
     nixd
     nixfmt
-    nodejs_24
-    corepack_24
+    nodejs-slim_26
+    corepack
   ];
 
   shellHook = ''
-    ${corepack_24}/bin/pnpm i --frozen-lockfile
+    ${corepack}/bin/pnpm i --frozen-lockfile
   '';
 }
