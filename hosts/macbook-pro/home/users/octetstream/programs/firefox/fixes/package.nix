@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   programs.firefox.package = lib.makeOverridable ({ ... }: pkgs.firefox-bin) { }; # https://github.com/nix-community/home-manager/issues/6955#issuecomment-3109421819
+  programs.firefox.profileVersion = null; # hope this will help with profiles problem
 
   # https://github.com/booxter/home-manager/commit/dd1602e306fec366280f5953c5e1b553e3d9672a
   # Mimic nixpkgs package environment for read-only profiles.ini management
