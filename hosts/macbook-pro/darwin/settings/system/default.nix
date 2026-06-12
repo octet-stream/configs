@@ -16,6 +16,13 @@
         AppleICUForce24HourTime = true; # Force time format to 24h
         AppleInterfaceStyle = "Dark"; # Use dark theme
       };
+      CustomUserPreferences = {
+        NSGlobalDomain = {
+          # TODO: Remove this after updating to macOS 27
+          # This disables "floating sidebar" in some of the system apps
+          NSSplitViewItemSidebarDefaultsToFloatingAppearance = false;
+        };
+      };
     };
   };
 }
