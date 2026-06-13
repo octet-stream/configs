@@ -2,8 +2,8 @@
 #
 # Basically it just imports `shell.nix` file from project's root where the shell itself defined
 
-{ inputs, ... }: {
+{ self, ... }: {
   perSystem = { pkgs, ... }: {
-    devShells.default = import (inputs.self + /shell.nix) { inherit pkgs; };
+    devShells.default = import (self + /shell.nix) { inherit pkgs; };
   };
 }
