@@ -6,6 +6,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
+    import-tree.url = "github:vic/import-tree";
 
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
@@ -83,16 +84,19 @@
   outputs =
     {
       flake-parts,
+      import-tree,
       ...
     }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "aarch64-darwin" ];
-      imports = [ ./hosts ];
+    # flake-parts.lib.mkFlake { inherit inputs; } {
+    #   debug = true;
+    #   systems = [ "aarch64-darwin" ];
+    #   imports = [ ./hosts ];
 
-      perSystem =
-        { pkgs, ... }:
-        {
-          devShells.default = import ./shell.nix { inherit pkgs; };
-        };
-    };
+    #   perSystem =
+    #     { pkgs, ... }:
+    #     {
+    #       devShells.default = import ./shell.nix { inherit pkgs; };
+    #     };
+    # };
+    flake-parts.lib.mkFlake { inherit inputs; } (import-tree ./modules);
 }
