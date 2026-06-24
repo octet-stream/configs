@@ -6,7 +6,7 @@ mkShell {
   packages = [
     nixd
     nixfmt
-    nodejs-slim_26
+    nodejs_26
     corepack
   ];
 
