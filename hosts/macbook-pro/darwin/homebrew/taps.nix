@@ -8,5 +8,7 @@
       "homebrew/homebrew-cask" = homebrew-cask;
       "infisical/homebrew-get-cli" = infisical-cli;
     };
+
+    trust.taps = [ "infisical/homebrew-get-cli" ];
   };
 }
