@@ -57,7 +57,7 @@ in
     profiles.default = {
       # Disable extensions auto-update and let nix-vscode-extensions and nix4vscode manage updates and extensions
       enableExtensionUpdateCheck = false;
-      userSettings."extensions.autoUpdate" = false;
+      userSettings."extensions.autoUpdate" = "off";
 
       extensions = vscMarketplaceSource ++ nix4VSCodeSource;
     };
