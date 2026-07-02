@@ -13,7 +13,7 @@ let
   };
 in
 {
-  flake.modules.darwin.homebrew = {
+  flake.modules.darwin.homebrew = { ... }: {
     nix-homebrew.package = brewPackage;
   };
 }
