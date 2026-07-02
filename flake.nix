@@ -87,16 +87,5 @@
       import-tree,
       ...
     }@inputs:
-    # flake-parts.lib.mkFlake { inherit inputs; } {
-    #   debug = true;
-    #   systems = [ "aarch64-darwin" ];
-    #   imports = [ ./hosts ];
-
-    #   perSystem =
-    #     { pkgs, ... }:
-    #     {
-    #       devShells.default = import ./shell.nix { inherit pkgs; };
-    #     };
-    # };
     flake-parts.lib.mkFlake { inherit inputs; } (import-tree ./modules);
 }
