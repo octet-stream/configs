@@ -4,9 +4,6 @@
     "google-chrome" # ?: Maybe move it to Home Manager, same as Firefox
     "tor-browser"
 
-    # Terminal emulators
-    "iterm2"
-
     # Dev tools
     "orbstack" # Docker Desktop alternative
     "container" # Apple's docker-like containerization
