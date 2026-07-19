@@ -1,3 +1,3 @@
-onlyBuiltDependencies:
-  - "@biomejs/biome"
-  - typescript
+allowBuilds:
+  '@biomejs/biome': true
+  typescript: true

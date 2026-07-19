@@ -29,6 +29,7 @@
     }
   },
 
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.experimental.useTsgo": true
 }
