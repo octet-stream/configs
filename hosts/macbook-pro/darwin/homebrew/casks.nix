@@ -2,11 +2,9 @@
   homebrew.casks = [
     # Browsers
     "google-chrome" # ?: Maybe move it to Home Manager, same as Firefox
-    "tor-browser"
 
     # Dev tools
     "orbstack" # Docker Desktop alternative
-    "container" # Apple's docker-like containerization
     "linear" # Projects management tool
     "notion" # App to write, plan, collaborate, and get organised
 
@@ -26,7 +24,6 @@
     "discord" # Messenger
     "hot" # Temperature Sensors
     "qbittorrent" # BitTorrent client
-    "desktoppr" # Sets wallpapers via command line
     "keyboardcleantool" # Blocks all keyboard input when opened
     "postman"
 
