@@ -19,13 +19,13 @@
     # Others
     "lulu" # Firewall
     "topnotch" # Simply hides the notch ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯
-    "jordanbaird-ice" # Menu bar manager
     "appcleaner" # Uninstallation utility
     "discord" # Messenger
     "hot" # Temperature Sensors
     "qbittorrent" # BitTorrent client
     "keyboardcleantool" # Blocks all keyboard input when opened
     "postman"
+    "thaw" # Menu bar manager
 
     # Broken
     # "inkscape" # SVG editor
