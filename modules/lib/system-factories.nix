@@ -14,7 +14,7 @@ let
         {
           nixpkgs = {
             hostPlatform = lib.mkDefault system;
-            config.allowUnfree = true;
+            config.allowUnfree = lib.mkDefault true;
           };
         }
       ];
