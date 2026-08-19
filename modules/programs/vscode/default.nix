@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.modules.homeManager.vscode = { pkgsUnstable, ... }: {
+  flake.modules.homeManager.vscode = { pkgsUnstable, lib, ... }: {
     # Adds vscode extensions overlays to `pkgs`
     imports = with inputs; [
       nix-vscode-extensions.overlays.default
@@ -7,8 +7,8 @@
     ];
 
     programs.vscode = {
-      enable = true;
-      package = pkgsUnstable.vscode;
+      enable = lib.mkDefault true;
+      package = lib.mkDefault pkgsUnstable.vscode;
 
       # Disable VSCode self-update and let Home Manager to manage VSCode versions instead.
       profiles.default.enableUpdateCheck = false;
