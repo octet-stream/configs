@@ -21,6 +21,12 @@
           # TODO: Remove this after updating to macOS 27
           # This disables "floating sidebar" in some of the system apps
           NSSplitViewItemSidebarDefaultsToFloatingAppearance = false;
+
+          # Undocumented application window corner radius; no confirmed hard range.
+          # Community reference points: 8 ≈ Yosemite, 10 ≈ Sequoia,
+          # 20 ≈ macOS 27, 26 ≈ Tahoe. Values below 10 may distort some windows.
+          # IMportant: Keep the value a float.
+          NSConvolutionOverride1 = 10.0;
         };
       };
     };
