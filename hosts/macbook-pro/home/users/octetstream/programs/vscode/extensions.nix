@@ -24,6 +24,7 @@ let
     waderyan.gitblame
     graphql.vscode-graphql
     graphql.vscode-graphql-syntax
+    typescriptteam.native-preview
   ];
 
   # Extensions from nix4vscode overlay

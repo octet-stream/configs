@@ -52,6 +52,14 @@
 
     # Disable redhat telemetry (in their yaml extension)
     "redhat.telemetry.enabled" = false;
+    "yaml.disableSchemaDetection" = [
+      "**/.github/workflows/*.yml"
+      "**/.github/workflows/*.yaml"
+      "**/.gitea/workflows/*.yml"
+      "**/.gitea/workflows/*.yaml"
+      "**/.forgejo/workflows/*.yml"
+      "**/.forgejo/workflows/*.yaml"
+    ];
 
     # Enable oxc only if config detected
     "oxc.requireConfig" = true;
