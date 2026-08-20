@@ -1,13 +1,30 @@
+{ self, ... }:
 {
-  flake.modules.darwin.macbook-pro = { pkgs, ... }: {
-    users.users.octetstream = {
-      shell = pkgs.zsh;
-    };
+  flake.modules.darwin.macbook-pro =
+    {
+      pkgs,
+      utils,
+      ...
+    }:
+    let
+      username = "octetstream";
+      homeDirectory = utils.mkHomeDirectory username;
+    in
+    {
+      imports = [ self.modules.generic.utils ];
 
-    home-manager.users.octetstream = { ... }: {
-      home.username = "octetstream";
-    };
+      users.users.${username} = {
+        home = homeDirectory;
+        shell = pkgs.zsh;
+      };
 
-    programs.zsh.enable = true;
-  };
+      home-manager.users.${username} = { ... }: {
+        home = {
+          inherit username homeDirectory;
+          stateVersion = "24.11";
+        };
+      };
+
+      programs.zsh.enable = true;
+    };
 }

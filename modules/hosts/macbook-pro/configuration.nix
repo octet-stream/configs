@@ -1,6 +1,11 @@
-{ self, ... }: {
+{ inputs, self, ... }: {
   flake.modules.darwin.macbook-pro = { ... }: {
-    imports = [ self.modules.darwin.homebrew ];
+    imports = [
+      inputs.home-manager.darwinModules.home-manager
+      self.modules.darwin.homebrew
+    ];
+
+    nix-homebrew.enableRosetta = true;
 
     networking.hostName = "macbook-pro";
     system = {
