@@ -1,8 +1,11 @@
 { ... }:
 {
   flake.modules.generic.utils =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
     let
+      capitalize =
+        value: (lib.toUpper (lib.substring 0 1 value)) + (lib.substring 1 (lib.stringLength value) value);
+
       mkHomeDirectory =
         username:
         if pkgs.stdenv.hostPlatform.isDarwin then
@@ -14,7 +17,7 @@
     in
     {
       _module.args.utils = {
-        inherit mkHomeDirectory;
+        inherit capitalize mkHomeDirectory;
       };
     };
 }

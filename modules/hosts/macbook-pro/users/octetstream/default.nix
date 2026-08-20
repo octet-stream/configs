@@ -1,5 +1,16 @@
 { self, ... }:
+let
+  username = "octetstream";
+  userModule = "hosts/macbook-pro/users/${username}";
+in
 {
+  flake.modules.homeManager.${userModule} = {
+    imports = [ self.modules.generic.utils ];
+
+    home.stateVersion = "24.11";
+    programs.home-manager.enable = true;
+  };
+
   flake.modules.darwin.macbook-pro =
     {
       pkgs,
@@ -7,7 +18,6 @@
       ...
     }:
     let
-      username = "octetstream";
       homeDirectory = utils.mkHomeDirectory username;
     in
     {
@@ -19,9 +29,10 @@
       };
 
       home-manager.users.${username} = { ... }: {
+        imports = [ self.modules.homeManager.${userModule} ];
+
         home = {
           inherit username homeDirectory;
-          stateVersion = "24.11";
         };
       };
 

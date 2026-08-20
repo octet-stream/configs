@@ -1,17 +1,35 @@
-{ inputs, ... }: {
-  flake.modules.homeManager.zed-editor = { pkgsUnstable, lib, ... }: {
-    # Adds ex-extensions overlat to `pkgs`
-    imports = with inputs; [ zed-extensions.overlays.default ];
-
-    programs.zed-editor = {
-      enable = lib.mkDefault true;
-      package = lib.mkDefault pkgsUnstable.zed-editor;
-
-      # Disable auto-updates because Zed is managed by Nix
-      userSettings.auto_update = false;
-    };
-
-    # Enable extension managed by zed-editor-extension module, so they can be installed using Nix
-    programs.zed-editor-extensions.enable = lib.mkDefault true;
+{ inputs, ... }:
+let
+  extensionsOverlay = {
+    nixpkgs.overlays = [ inputs.zed-extensions.overlays.default ];
   };
+in
+{
+  # Makes Zed extensions available under `pkgs.zed-extensions`.
+  flake.modules.darwin.zed-editor = extensionsOverlay;
+  flake.modules.nixos.zed-editor = extensionsOverlay;
+
+  flake.modules.homeManager.zed-editor =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    {
+      imports = [ inputs.zed-extensions.homeManagerModules.default ];
+
+      programs.zed-editor = {
+        enable = lib.mkDefault true;
+        package =
+          lib.mkDefault
+            inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zed-editor;
+
+        # Disable auto-updates because Zed is managed by Nix.
+        userSettings.auto_update = false;
+      };
+
+      # Allow extensions to be installed declaratively from `pkgs.zed-extensions`.
+      programs.zed-editor-extensions.enable = lib.mkDefault config.programs.zed-editor.enable;
+    };
 }
