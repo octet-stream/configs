@@ -1,10 +1,11 @@
 { self, ... }:
 let
+  hostname = "macbook-pro";
   username = "octetstream";
-  userModule = "hosts/macbook-pro/users/${username}";
+  userModuleKey = self.lib.mkUserModuleKey hostname username;
 in
 {
-  flake.modules.homeManager.${userModule} = {
+  flake.modules.homeManager.${userModuleKey} = {
     imports = [ self.modules.generic.utils ];
 
     home.stateVersion = "24.11";
@@ -29,7 +30,7 @@ in
       };
 
       home-manager.users.${username} = { ... }: {
-        imports = [ self.modules.homeManager.${userModule} ];
+        imports = [ self.modules.homeManager.${userModuleKey} ];
 
         home = {
           inherit username homeDirectory;

@@ -1,10 +1,11 @@
 { self, ... }:
 let
+  hostname = "macbook-pro";
   username = "octetstream";
-  userModule = "hosts/macbook-pro/users/${username}";
+  userModuleKey = self.lib.mkUserModuleKey hostname username;
 in
 {
-  flake.modules.homeManager.${userModule} = {
+  flake.modules.homeManager.${userModuleKey} = {
     imports = [ self.modules.homeManager.catppuccin ];
 
     catppuccin = {

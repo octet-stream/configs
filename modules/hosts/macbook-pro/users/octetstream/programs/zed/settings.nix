@@ -1,10 +1,15 @@
-{ ... }:
+{ self, ... }:
 let
+  hostname = "macbook-pro";
   username = "octetstream";
-  zedModule = "hosts/macbook-pro/users/${username}/zed";
+  zedModuleKey = self.lib.mkProgramModuleKey hostname username "zed";
+  moduleKey = self.lib.mkModuleKey [
+    zedModuleKey
+    "settings"
+  ];
 in
 {
-  flake.modules.homeManager."${zedModule}/settings" = {
+  flake.modules.homeManager.${moduleKey} = {
     programs.zed-editor.userSettings = {
       buffer_font_size = 13;
       buffer_font_family = "Menlo";

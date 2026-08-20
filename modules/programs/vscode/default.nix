@@ -1,31 +1,31 @@
-{ inputs, ... }: {
-  flake.modules.homeManager.vscode = { pkgsUnstable, lib, ... }: {
-    # Adds vscode extensions overlays to `pkgs`
-    imports = with inputs; [
-      nix-vscode-extensions.overlays.default
-      nix4vscode.overlays.forVscode
+{ inputs, ... }:
+let
+  extensionsOverlay = {
+    nixpkgs.overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+      inputs.nix4vscode.overlays.forVscode
     ];
+  };
+in
+{
+  # Makes extensions available under `pkgs.vscode-marketplace-release` and `pkgs.nix4vscode`.
+  flake.modules.darwin.vscode = extensionsOverlay;
+  flake.modules.nixos.vscode = extensionsOverlay;
 
-    programs.vscode = {
-      enable = lib.mkDefault true;
-      package = lib.mkDefault pkgsUnstable.vscode;
+  flake.modules.homeManager.vscode =
+    { lib, pkgsUnstable, ... }:
+    {
+      programs.vscode = {
+        enable = lib.mkDefault true;
+        package = lib.mkDefault pkgsUnstable.vscode;
 
-      # Disable VSCode self-update and let Home Manager to manage VSCode versions instead.
-      profiles.default.enableUpdateCheck = false;
-
-      # Make extension directory readonly, so VSCode cannot override it.
-      # It seem to break extensions otherwise.
-      #
-      # See:
-      # https://github.com/nix-community/home-manager/issues/3507
-      # https://github.com/nix-community/home-manager/issues/4394
-      mutableExtensionsDir = false;
-
-      profiles.default = {
-        # Disable extensions auto-update and let nix-vscode-extensions and nix4vscode manage updates and extensions
-        enableExtensionUpdateCheck = false;
-        userSettings."extensions.autoUpdate" = "off";
+        # Keep VSCode and its extensions fully managed by Nix.
+        mutableExtensionsDir = false;
+        profiles.default = {
+          enableUpdateCheck = false;
+          enableExtensionUpdateCheck = false;
+          userSettings."extensions.autoUpdate" = "off";
+        };
       };
     };
-  };
 }

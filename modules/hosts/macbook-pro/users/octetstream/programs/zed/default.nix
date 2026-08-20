@@ -1,19 +1,26 @@
 { self, ... }:
 let
+  hostname = "macbook-pro";
   username = "octetstream";
-  userModule = "hosts/macbook-pro/users/${username}";
-  zedModule = "${userModule}/zed";
+  userModuleKey = self.lib.mkUserModuleKey hostname username;
+  zedModuleKey = self.lib.mkProgramModuleKey hostname username "zed";
+  mkZedModuleKey =
+    moduleName:
+    self.lib.mkModuleKey [
+      zedModuleKey
+      moduleName
+    ];
 in
 {
-  flake.modules.homeManager.${userModule} =
+  flake.modules.homeManager.${userModuleKey} =
     { config, lib, ... }:
     {
       imports = [
         self.modules.homeManager.zed-editor
-        self.modules.homeManager."${zedModule}/extensions"
-        self.modules.homeManager."${zedModule}/keybindings"
-        self.modules.homeManager."${zedModule}/settings"
-        self.modules.homeManager."${zedModule}/theme"
+        self.modules.homeManager.${mkZedModuleKey "extensions"}
+        self.modules.homeManager.${mkZedModuleKey "keybindings"}
+        self.modules.homeManager.${mkZedModuleKey "settings"}
+        self.modules.homeManager.${mkZedModuleKey "theme"}
       ];
 
       home.shellAliases = lib.mkIf config.programs.zed-editor.enable {

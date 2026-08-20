@@ -1,5 +1,28 @@
-{ ... }:
+{ lib, ... }:
+let
+  mkModuleKey = lib.concatStringsSep "/";
+
+  mkUserModuleKey =
+    hostname: username:
+    mkModuleKey [
+      "hosts"
+      hostname
+      "users"
+      username
+    ];
+
+  mkProgramModuleKey =
+    hostname: username: programName:
+    mkModuleKey [
+      (mkUserModuleKey hostname username)
+      programName
+    ];
+in
 {
+  flake.lib = {
+    inherit mkModuleKey mkProgramModuleKey mkUserModuleKey;
+  };
+
   flake.modules.generic.utils =
     { lib, pkgs, ... }:
     let
@@ -17,7 +40,13 @@
     in
     {
       _module.args.utils = {
-        inherit capitalize mkHomeDirectory;
+        inherit
+          capitalize
+          mkHomeDirectory
+          mkModuleKey
+          mkProgramModuleKey
+          mkUserModuleKey
+          ;
       };
     };
 }

@@ -13,7 +13,7 @@ in
     {
       config,
       lib,
-      pkgs,
+      pkgsUnstable,
       ...
     }:
     {
@@ -21,9 +21,7 @@ in
 
       programs.zed-editor = {
         enable = lib.mkDefault true;
-        package =
-          lib.mkDefault
-            inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zed-editor;
+        package = lib.mkDefault pkgsUnstable.zed-editor;
 
         # Disable auto-updates because Zed is managed by Nix.
         userSettings.auto_update = false;

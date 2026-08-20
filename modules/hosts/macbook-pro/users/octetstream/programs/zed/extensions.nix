@@ -1,10 +1,15 @@
-{ ... }:
+{ self, ... }:
 let
+  hostname = "macbook-pro";
   username = "octetstream";
-  zedModule = "hosts/macbook-pro/users/${username}/zed";
+  zedModuleKey = self.lib.mkProgramModuleKey hostname username "zed";
+  moduleKey = self.lib.mkModuleKey [
+    zedModuleKey
+    "extensions"
+  ];
 in
 {
-  flake.modules.homeManager."${zedModule}/extensions" =
+  flake.modules.homeManager.${moduleKey} =
     { pkgs, ... }:
     {
       programs.zed-editor-extensions.packages = with pkgs.zed-extensions; [
