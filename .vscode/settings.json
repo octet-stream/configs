@@ -24,6 +24,9 @@
 
         "nix-darwin": {
           "expr": "(builtins.getFlake \"${workspaceFolder}\").darwinConfigurations.macbook-pro.options"
+        },
+        "flake-parts": {
+          "expr": "(builtins.getFlake \"${workspaceFolder}\").debug.options"
         }
       }
     }
