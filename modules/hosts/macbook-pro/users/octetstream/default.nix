@@ -36,7 +36,5 @@ in
           inherit username homeDirectory;
         };
       };
-
-      programs.zsh.enable = true;
     };
 }

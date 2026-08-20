@@ -8,6 +8,7 @@
         self.modules.darwin.homebrew
         self.modules.darwin.vscode
         self.modules.darwin.zed-editor
+        self.modules.darwin.zsh
       ];
 
       nix-homebrew.enableRosetta = true;
