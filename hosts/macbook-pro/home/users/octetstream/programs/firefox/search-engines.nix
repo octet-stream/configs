@@ -40,6 +40,23 @@
           }
         ];
       };
+
+      nix-hydra = {
+        name = "Hydra";
+
+        definedAliases = [ "@hydra" ];
+        urls = [
+          {
+            template = "https://hydra.nixos.org/search";
+            params = [
+              {
+                name = "query";
+                value = "{searchTerms}";
+              }
+            ];
+          }
+        ];
+      };
     };
   };
 }
