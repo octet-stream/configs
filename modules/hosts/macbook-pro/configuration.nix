@@ -26,5 +26,10 @@
         primaryUser = "octetstream";
         stateVersion = 5;
       };
+
+      virtualisation.docker = {
+        enable = true;
+        backend = "orbstack";
+      };
     };
 }
