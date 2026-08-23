@@ -5,6 +5,7 @@
     {
       imports = [
         inputs.home-manager.darwinModules.home-manager
+        self.modules.darwin.docker
         self.modules.darwin.homebrew
         self.modules.darwin.vscode
         self.modules.darwin.zed-editor

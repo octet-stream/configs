@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.homeManager.docker =
+  flake.modules.darwin.docker =
     {
       config,
       lib,
@@ -8,28 +8,42 @@
       ...
     }:
     let
-      cfg = config.programs.docker;
+      cfg = config.virtualisation.docker;
     in
     {
-      options.programs.docker = {
-        enable = lib.mkEnableOption "Docker CLI";
-        package = lib.mkPackageOption pkgs "docker-client" { };
+      options.virtualisation.docker = {
+        enable = lib.mkEnableOption "Docker";
+
+        package = lib.mkPackageOption pkgs "docker" { };
+
+        backend = lib.mkOption {
+          type = lib.types.nullOr (
+            lib.types.enum [
+              "orbstack"
+              "docker-desktop"
+            ]
+          );
+          default = null;
+          description = ''
+            Docker backend to install with Homebrew. When null, only the
+            Docker CLI is installed.
+          '';
+        };
       };
 
-      config = lib.mkMerge [
-        {
-          programs.docker.enable = lib.mkDefault true;
-        }
+      config = lib.mkIf cfg.enable {
+        assertions = [
+          {
+            assertion = cfg.backend == null || config.homebrew.enable;
+            message = ''
+              virtualisation.docker.backend requires Homebrew to be enabled.
+              Import the Homebrew module or set virtualisation.docker.backend = null.
+            '';
+          }
+        ];
 
-        (lib.mkIf cfg.enable {
-          home.packages = [ cfg.package ];
-        })
-      ];
-    };
-
-  flake.modules.nixos.docker =
-    { lib, ... }:
-    {
-      virtualisation.docker.enable = lib.mkDefault true;
+        environment.systemPackages = [ cfg.package ];
+        homebrew.casks = lib.optional (cfg.backend != null) cfg.backend;
+      };
     };
 }
