@@ -13,8 +13,6 @@ in
     home.shellAliases = {
       projects = "cd ~/projects";
       work = "cd ~/work";
-      gst = "git status";
-      gpom = "git push origin main";
     };
   };
 }
