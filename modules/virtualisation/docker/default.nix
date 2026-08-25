@@ -26,7 +26,7 @@
           default = null;
           description = ''
             Docker backend to install with Homebrew. When null, only the
-            Docker CLI is installed.
+            Docker CLI is installed. Defaults to `null`.
           '';
         };
       };
