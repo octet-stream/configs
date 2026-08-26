@@ -1,11 +1,12 @@
-{ inputs, self, ... }:
+{ self, ... }:
 {
   flake.modules.darwin.macbook-pro =
     { pkgsUnstable, ... }:
     {
       imports = [
-        inputs.home-manager.darwinModules.home-manager
+        self.modules.darwin.home-manager
         self.modules.darwin.docker
+        self.modules.darwin.firefox
         self.modules.darwin.vscode
         self.modules.darwin.zed-editor
         self.modules.darwin.zsh
