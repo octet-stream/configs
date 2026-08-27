@@ -12,7 +12,7 @@
       };
     };
 
-  flake.modules.darwin.home-manager = {
+  flake.modules.darwin.home-manager = { ... }: {
     imports = [ inputs.home-manager.darwinModules.home-manager ];
     home-manager.sharedModules = [ self.modules.homeManager.darwin ];
   };
