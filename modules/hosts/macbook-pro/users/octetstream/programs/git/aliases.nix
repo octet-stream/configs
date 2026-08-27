@@ -14,6 +14,7 @@ in
       ga = "git add";
       gc = "git commit";
       gst = "git status";
+      gp = "git push";
       gpom = "git push origin main";
     };
 
