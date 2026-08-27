@@ -5,7 +5,6 @@
       "google-chrome" # ?: Maybe move it to Home Manager, same as Firefox
 
       # Dev tools
-      "orbstack" # Docker Desktop alternative
       "linear" # Projects management tool
       "notion" # App to write, plan, collaborate, and get organised
       "postman"
