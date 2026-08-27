@@ -17,10 +17,17 @@ in
       homeManagerApplicationsDirectory = "${homeManagerConfig.home.homeDirectory}/${homeManagerConfig.targets.darwin.copyApps.directory}";
     in
     {
+      nix.settings.experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+
       networking = {
         computerName = "Nick's Macbook Pro";
         hostName = "macbook-pro";
       };
+
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       system = {
         configurationRevision = self.rev or self.dirtyRev or null;
