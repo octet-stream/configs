@@ -14,15 +14,19 @@ in
     {
       home.packages = [ pkgs.fnm ];
 
-      programs.zsh.initContent = ''
-        # Preferred editor for local and remote sessions.
-        if [[ -n "$SSH_CONNECTION" ]]; then
-          export EDITOR="vim"
-        else
-          export EDITOR="code -wr"
-        fi
+      programs.zsh = {
+        initContent = ''
+          # Preferred editor for local and remote sessions.
+          if [[ -n "$SSH_CONNECTION" ]]; then
+            export EDITOR="vim"
+          else
+            export EDITOR="code -wr"
+          fi
 
-        eval "$(${lib.getExe pkgs.fnm} env --use-on-cd --shell zsh)"
-      '';
+          eval "$(${lib.getExe pkgs.fnm} env --use-on-cd --shell zsh)"
+        '';
+
+        autocd = true;
+      };
     };
 }
