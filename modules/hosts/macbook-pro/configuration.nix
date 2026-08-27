@@ -19,11 +19,7 @@
         useUserPackages = true;
       };
 
-      networking.hostName = "macbook-pro";
-      system = {
-        primaryUser = "octetstream";
-        stateVersion = 5;
-      };
+      system.primaryUser = "octetstream";
 
       virtualisation.docker = {
         enable = true;
