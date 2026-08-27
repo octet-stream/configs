@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./controlcenter
-    ./networking
-    ./system
-  ];
-}
