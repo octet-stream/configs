@@ -16,6 +16,8 @@ in
           "app.update.auto" = false;
           "browser.ml.enable" = false;
 
+          "browser.download.useDownloadDir" = false;
+
           # Disable irritating first-run stuff.
           "browser.disableResetPrompt" = true;
           "browser.download.panel.shown" = true;
