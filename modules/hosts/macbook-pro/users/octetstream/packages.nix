@@ -19,6 +19,7 @@ in
         git-extras
         nginx-language-server
         iina
+        lgogdownloader
 
         (if pkgs.stdenv.hostPlatform.isDarwin then vlc-bin else vlc)
       ];
