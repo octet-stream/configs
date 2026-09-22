@@ -34,6 +34,7 @@ in
         codex
         codex-acp
         gh
+        google-cloud-sdk
       ];
     in
     {
