@@ -29,10 +29,6 @@ in
         stripe-cli
         devenv
         dbeaver-bin
-
-        # Work tools.
-        codex
-        codex-acp
         gh
         google-cloud-sdk
       ];
