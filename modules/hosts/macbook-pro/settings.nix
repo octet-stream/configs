@@ -55,7 +55,7 @@ in
               ]
               ++ applications homeManagerApplicationsDirectory [
                 "Visual Studio Code"
-                "Zed"
+                # "Zed"
               ]
               ++ applications "/Applications" [
                 "Linear"

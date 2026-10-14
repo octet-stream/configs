@@ -23,6 +23,8 @@ in
         self.modules.homeManager.${mkZedModuleKey "theme"}
       ];
 
+      programs.zed-editor.enable = false;
+
       home.shellAliases = lib.mkIf config.programs.zed-editor.enable {
         zed = "zeditor";
       };
