@@ -26,6 +26,7 @@
       "qbittorrent" # BitTorrent client
       "keyboardcleantool" # Blocks all keyboard input when opened
       "thaw" # Menu bar manager
+      "scroll-reverser" # Because Apple engineers still can't figure to separate mouse and trackpad settings ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯
 
       # Broken
       # "inkscape" # SVG editor
