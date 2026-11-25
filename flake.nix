@@ -25,7 +25,7 @@
 
     # Homebrew package
     homebrew = {
-      url = "github:Homebrew/brew/7.0.14"; # I'll have to bump the version by myself, because auto-updates are disabled
+      url = "github:Homebrew/brew/7.0.16"; # I'll have to bump the version by myself, because auto-updates are disabled
       flake = false;
     };
 
