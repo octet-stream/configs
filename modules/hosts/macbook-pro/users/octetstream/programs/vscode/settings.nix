@@ -27,7 +27,6 @@ in
       "nix.serverPath" = "nixd";
       "nix.enableLanguageServer" = true;
       "nix.serverSettings".nixd.formatting.command = [ "nixfmt" ];
-      "nixEnvSelector.suggestion" = false;
 
       "files.associations"."flake.lock" = "json";
       "[markdown]"."editor.wordWrap" = "off";
@@ -38,7 +37,6 @@ in
       "emmet.includeLanguages".astro = "html";
 
       "window.commandCenter" = false;
-      "chat.commandCenter.enabled" = false;
       "chat.agent.enabled" = false;
       "workbench.editor.empty.hint" = "hidden";
       "terminal.integrated.initialHint" = false;
@@ -55,6 +53,18 @@ in
       ];
 
       "oxc.requireConfig" = true;
+
+      "json.schemaDownload.trustedDomains" = {
+        "https://schemastore.azurewebsites.net/" = true;
+        "https://raw.githubusercontent.com/microsoft/vscode/" = true;
+        "https://raw.githubusercontent.com/devcontainers/spec/" = true;
+        "https://www.schemastore.org/" = true;
+        "https://json.schemastore.org/" = true;
+        "https://spec.openapis.org/" = true;
+        "https://json-schema.org/" = true;
+        "https://developer.microsoft.com/json-schemas/" = true;
+        "https://biomejs.dev" = true;
+      };
     };
   };
 }
